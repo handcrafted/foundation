@@ -1,0 +1,10 @@
+#nav_aux
+  %ul
+    %li.current_user
+      = link_to "Hello, #{current_user.display_name}", edit_user_url(current_user)
+    %li
+      = link_to "Site Settings", edit_admin_site_setting_url
+    %li
+      = link_to "View Site", root_url
+    %li.signout_url
+      = link_to "Logout", signout_url

@@ -1,0 +1,30 @@
+!!! Strict
+= render :partial => "shared/head/signature"
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", :'xml:lang' => "en"}
+  %head
+    %title= page_title
+    %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:name => "lang", :content => "en"}
+    // Site CSS
+    = stylesheet_link_tag 'compiled/sessions.css'
+    // Site Javascript
+    = render :partial => "shared/head/javascript/site_javascript"
+    // IE6 Update Javascript
+    = render :partial => "shared/head/javascript/ie6_update"
+    // SEO
+    = render :partial => "shared/head/seo/head_content_optimization"
+    = render :partial => "shared/head/seo/head_se_indexing"
+    = render :partial => "shared/head/seo/head_base_url"
+  %body{:class => "sessions #{body_class(params[:controller], params[:id])} #{action_name}"}
+    #wrap
+      #mast_head
+        #branding
+          %h1
+            = link_to @site.name, root_url
+      #page
+        .padding
+          .wrap.clearfix
+            = render :partial => "shared/flash_messages"
+            = yield
+    = render :partial => "shared/footer"
+    = render :partial => "shared/foundation_footer"

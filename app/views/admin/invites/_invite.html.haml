@@ -1,0 +1,5 @@
+%tr.invite_row
+  %td= invite.email
+  %td= invite.sent_at.to_s(:date_time)
+  %td= link_to "Approve", approve_admin_invite_url(invite), :class => "approve_invite_link" unless invite.approved?
+  %td= link_to "Remove", admin_invite_url(invite), {:method => :delete}

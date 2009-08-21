@@ -1,0 +1,10 @@
+- if @site.beta_invites?
+  .notice.invites
+    .padding
+      %h4
+        You have
+        = current_user.invites
+        invites! Send an invite to a friend.
+      %p
+        If you need more invites, just email us at
+        = mail_to @site.admin_email

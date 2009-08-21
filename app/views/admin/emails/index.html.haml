@@ -1,0 +1,8 @@
+#page_header
+  %h1 Emails
+
+#page_body.wide
+  %h2 Emails
+  = resources_table @emails, :fields => [:name, :subject], :headers => ["Name", "Subject"], :link_action => :edit
+
+  

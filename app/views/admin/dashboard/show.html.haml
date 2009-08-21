@@ -1,0 +1,12 @@
+#page_header
+  %h1
+    Dashboard
+
+#page_body
+  %p
+    = "Total Users: #{User.count}"
+    - if @site.beta_invites?
+      %p
+        = "Total Unused Invites #{Invite.unused.count}"
+      %p
+        = "Total Unapproved Invites: #{Invite.unapproved.count}"

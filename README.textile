@@ -1,0 +1,33 @@
+h1. Handcrafted's Foundation
+
+Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens": and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on this foundation of clean, extensible, handcrafted code. We eat our own dig food, we use this as our core starting point to ensure consistency through-out our applications.
+
+This is our core rails app starting point, built with certain specific standards and opinions in mind. We were tired of writing or copy and pasting the same code over and over from project to project. Then git came along. Git helped us realize there was a better way. Well no more.
+
+We bake all our goodness in here. Once.
+
+h2. Key Concepts
+
+* Make the app extensible by offering smart hooks for engines and plugins to add functionality
+* Keep the code clean. Break repeating code out into partials and re-use as needed
+* Write semantic HTML/Haml. Of course clean, organized CSS/Sass goes with that. And with the help of Compass, we get to ensure that we keep our CSS/Sass DRY
+* Tests, tests, tests. If you aren't testing. You are wrong.
+
+h2. Opinionated Choices
+
+* "JQuery":http://jquery.com/
+* "JQuery Tools":http://flowplayer.org/tools/
+* "Haml":http://haml-lang.com/, "Sass":http://sass-lang.com/, "Compass":http://wiki.github.com/chriseppstein/compass
+* Delayed Job
+* AuthLogic
+* NewRelic
+* Hoptoad
+
+h2. Gotchas
+
+* We try to use "Markers" in key files, such as routes and application.js. We do this to ensure that continued foundation development doesn't trample continued application development
+* Don't annotate the base Foundation application. You should only be annotating the models in your real application
+
+h2. How to use the bootstrap for your app
+
+...

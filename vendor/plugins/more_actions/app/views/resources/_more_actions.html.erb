@@ -1,0 +1,22 @@
+<div class="resource_actions clearfix">
+  <ul>
+    <li>
+      Select:
+    </li>
+    <li>
+      <%= link_to "All", "#", :class => "select_all" %>
+    </li>
+    <li>
+      <%= link_to "None", "#", :class => "unselect_all" %>
+    </li>
+    <li class="more_actions">
+      <select class='more_action' name='more_action'>
+        <option value='none'>More Actions</option>
+        <% more_actions.each do |action, label| %>
+          <%= option_from_label(action, label) %>
+        <% end %>
+      </select>
+      <%= submit_tag "Do Action" %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,6 @@
+- flash.each do |type, msg|
+  %div{:id => "#{type}"}
+    %div{:id => "#{type}_wrap"}
+      %p
+        %span
+          = html_escape(msg)

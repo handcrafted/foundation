@@ -1,0 +1,13 @@
+#page_body
+
+  %h3 Sign up for an Account
+  = render :partial => "shared/beta/beta_notice"
+  = error_messages_for :user
+  - form_for :user, :url => users_path, :builder => HandcraftedFormBuilder do |f|
+    %fieldset
+      %legend Sign up for an Account
+      = f.text_field :email, :example => "johnsmith@gmail.com"
+      = f.password_field :password
+      = f.password_field :password_confirmation
+      = f.submit "Sign up" do
+        - link_to "Cancel", root_url, :class => "cancel"

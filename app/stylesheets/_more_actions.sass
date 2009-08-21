@@ -1,0 +1,82 @@
+.resource_form
+  border: 1px solid #aaa
+  .padding
+    padding: 0
+  .resource_header
+    background: #e5e5e5
+    border-bottom: 1px solid #aaa
+    padding: 5px
+    .resource_actions
+      ul, li, a
+        float: left
+        display: inline
+      ul
+        width: 100%
+        li
+          display: inline
+          margin-right: 5px
+          a
+            background: #eee
+            border: 1px solid #cacaca
+            color: #000
+            display: block
+            font-size: 11px
+            padding: 3px 6px
+            text-decoration: none
+            &:hover
+              border-color: #777
+              text-decoration: none
+          &.more_actions
+            float: right
+            margin-right: 0
+  .resource_body
+    .no_resources
+      color: #333
+      font-size: 12px
+      padding: 50px 50px
+      text-align: center
+    table
+      border-collapse: collapse
+      width: 100%
+      thead
+        color: #fff
+        th
+          color: #000
+          font-size: 11px
+          font-weight: bold
+          padding: 20px 5px 5px 5px
+      tbody
+        tr
+          &:hover
+            td
+              background: #f1f1f1
+        td
+          border-top: 1px solid #cacaca
+          border-bottom: 1px solid #cacaca
+          padding: 5px
+          &.select
+            width: 23px
+          &.name
+            width: 75%
+  // Resource Pagination
+  .pagination
+    font-size: 11px
+    font-weight: bold
+    padding: 10px 0
+    text-align: center
+    a, span
+      border: 1px solid #cacaca
+      color: #555
+      margin: 0 3px
+      padding: 2px 6px
+      text-decoration: none
+    a:hover,
+    a:active,
+    a:focus
+      color: #000
+    span.current
+      background: #000
+      border-color: #000
+      color: #fff
+    span.disabled
+      display: none

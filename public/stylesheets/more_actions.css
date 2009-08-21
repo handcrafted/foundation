@@ -1,0 +1,98 @@
+/* line 1, ../../../app/stylesheets/more_actions.sass */
+.resource_form {
+  border: 1px solid #aaa; }
+  /* line 3, ../../../app/stylesheets/more_actions.sass */
+  .resource_form .padding {
+    padding: 0; }
+  /* line 5, ../../../app/stylesheets/more_actions.sass */
+  .resource_form .resource_header {
+    background: #e5e5e5;
+    border-bottom: 1px solid #aaa;
+    padding: 5px; }
+    /* line 10, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .resource_header .resource_actions ul, .resource_form .resource_header .resource_actions li, .resource_form .resource_header .resource_actions a {
+      float: left;
+      display: inline; }
+    /* line 13, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .resource_header .resource_actions ul {
+      width: 100%; }
+      /* line 15, ../../../app/stylesheets/more_actions.sass */
+      .resource_form .resource_header .resource_actions ul li {
+        display: inline;
+        margin-right: 5px; }
+        /* line 18, ../../../app/stylesheets/more_actions.sass */
+        .resource_form .resource_header .resource_actions ul li a {
+          background: #eee;
+          border: 1px solid #cacaca;
+          color: #000;
+          display: block;
+          font-size: 11px;
+          padding: 3px 6px;
+          text-decoration: none; }
+          /* line 26, ../../../app/stylesheets/more_actions.sass */
+          .resource_form .resource_header .resource_actions ul li a:hover {
+            border-color: #777;
+            text-decoration: none; }
+        /* line 29, ../../../app/stylesheets/more_actions.sass */
+        .resource_form .resource_header .resource_actions ul li.more_actions {
+          float: right;
+          margin-right: 0; }
+  /* line 33, ../../../app/stylesheets/more_actions.sass */
+  .resource_form .resource_body .no_resources {
+    color: #333;
+    font-size: 12px;
+    padding: 50px 50px;
+    text-align: center; }
+  /* line 38, ../../../app/stylesheets/more_actions.sass */
+  .resource_form .resource_body table {
+    border-collapse: collapse;
+    width: 100%; }
+    /* line 41, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .resource_body table thead {
+      color: #fff; }
+      /* line 43, ../../../app/stylesheets/more_actions.sass */
+      .resource_form .resource_body table thead th {
+        color: #000;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 20px 5px 5px 5px; }
+    /* line 51, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .resource_body table tbody tr:hover td {
+      background: #f1f1f1; }
+    /* line 53, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .resource_body table tbody td {
+      border-top: 1px solid #cacaca;
+      border-bottom: 1px solid #cacaca;
+      padding: 5px; }
+      /* line 57, ../../../app/stylesheets/more_actions.sass */
+      .resource_form .resource_body table tbody td.select {
+        width: 23px; }
+      /* line 59, ../../../app/stylesheets/more_actions.sass */
+      .resource_form .resource_body table tbody td.name {
+        width: 75%; }
+  /* line 62, ../../../app/stylesheets/more_actions.sass */
+  .resource_form .pagination {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center; }
+    /* line 67, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .pagination a, .resource_form .pagination span {
+      border: 1px solid #cacaca;
+      color: #555;
+      margin: 0 3px;
+      padding: 2px 6px;
+      text-decoration: none; }
+    /* line 73, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .pagination a:hover,
+    .resource_form .pagination a:active,
+    .resource_form .pagination a:focus {
+      color: #000; }
+    /* line 77, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .pagination span.current {
+      background: #000;
+      border-color: #000;
+      color: #fff; }
+    /* line 81, ../../../app/stylesheets/more_actions.sass */
+    .resource_form .pagination span.disabled {
+      display: none; }
