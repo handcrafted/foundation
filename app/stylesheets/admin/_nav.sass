@@ -1,0 +1,65 @@
+// #nav_main
+=nav_main_current
+  background: #ddd
+  color: #0d0d0d
+  text-decoration: none
+  &:hover
+    background: #ddd
+    color: #0d0d0d
+    text-decoration: none
+
+body.admin_dashboard #nav_main .dashboard a,
+body.admin_users #nav_main .users a,
+body.admin_emails #nav_main .emails a,
+body.admin_invites #nav_main .invites a,
+body.admin_profiles #nav_main .profiles a
+  +nav_main_current
+  
+#nav_main
+  height: 30px
+  overflow: hidden
+  position: relative
+  ul
+    width: 100%
+  ul, li, a
+    +float("left")
+  li
+    margin-right: 2px
+    a
+      background: #212121
+      color: #fff
+      line-height: 30px
+      padding: 0 14px
+      text-decoration: none
+      &:hover
+        background: #353535
+        text-decoration: underline
+
+// #nav_aux
+#nav_aux
+  display: block
+  font-size: 11px
+  position: absolute
+  top: 8px
+  right: 0
+  ul, li
+    +float("left")
+  ul
+    li
+      color: #fff
+      list-style: none
+      &.signout_url
+        border-left: 1px solid #353535
+        margin-left: 5px
+        padding-left: 5px
+      &.current_user
+        border-right: 1px solid #353535
+        margin-right: 5px
+        padding-right: 5px
+    a
+      color: #fff
+      padding: 3px 4px
+      text-decoration: underline
+      &:hover
+        background: #353535
+        text-decoration: none

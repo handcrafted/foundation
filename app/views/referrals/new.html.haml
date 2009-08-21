@@ -1,0 +1,8 @@
+- form_for :referral, :url => referrals_url, :builder => HandcraftedFormBuilder do |f|
+  %fieldset
+    = f.first_last :first_name, :last_name
+    = f.text_field :email, :example => "johnsmith@gmail.com"
+    = f.text_area :friends_email, :rows => 5
+    = f.text_area :email_text
+    = f.submit "Tell your friends" do
+      - link_to "Cancel", root_url, :class => "cancel"

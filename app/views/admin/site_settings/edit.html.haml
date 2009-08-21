@@ -1,0 +1,19 @@
+#page_header
+  %h1
+    Site Settings
+
+#page_body
+  = error_messages_for 'site_setting'
+  - form_for(@site, :url => admin_site_setting_url, :method => :put, :builder => HandcraftedFormBuilder) do |f|
+    - field_set_tag do
+      %legend Site Settings
+      = f.text_field :name, :label => "Site Name", :example => "Handcrafted Web App"
+      = f.text_field :url, :label => "Site URL", :example => "http://app.gethandcrafted.com" 
+      = f.text_area :description, :label => "Site Description", :example => "A handcrafted web app that will be all the rage"
+      = f.text_field :admin_email, :label => "Outgoing email address", :example => "hello@app.gethandcrafted.com"
+      = f.check_box :user_avatars, :label => "Allow users to upload avatar pictures?"
+      = f.check_box :beta_invites, :label => "Enable beta invites?"
+      = f.check_box :referrals, :label => "Enable tell a friend?"
+      .form_actions
+        = submit_tag "Update"
+        = link_to "Cancel", admin_dashboard_url, :class => "cancel"

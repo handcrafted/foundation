@@ -1,0 +1,58 @@
+// Import Compass Mixins
+@import base.sass
+
+html
+  min-height: 100%
+body
+  background: #f1f1f1
+  color: #0d0d0d
+  font-family: Arial, Helvetica, Tahoma, sans
+  font-size: 13px
+  height: 100%
+
+#wrap
+  +centered
+  width: 500px
+#mast_head
+  padding: 20px 0
+  h1
+    font-size: 24px
+    font-weight: bold
+    text-align: center
+    a
+      color: #0d0d0d
+#page
+  background: #fff
+  border: 1px solid #ddd
+  +border-radius("3px")
+  & > .padding
+    background: #fff
+    border: 1px solid #cacaca
+    +border-radius-bottom-right("3px")
+    .wrap
+      padding: 25px
+  #page_header
+    margin-bottom: 15px
+    h2
+      font-size: 16px
+      font-weight: bold
+  #page_body
+    h3
+      font-size: 14px
+      font-weight: bold
+      margin-bottom: 25px
+
+#footer
+  padding: 20px 0
+  p
+    font-family: Verdana, Arial, sans-serif
+    font-size: 10px
+    margin-bottom: 8px
+    text-align: center
+    &:last-child
+      margin-bottom: 0
+  a
+    border-bottom: 2px solid #ccc
+    color: #171717
+    font-weight: bold
+    text-decoration: none

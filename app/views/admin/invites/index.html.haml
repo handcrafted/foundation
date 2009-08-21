@@ -1,0 +1,23 @@
+#page_header
+  %h1 Invites
+
+#page_body
+  %h2 Pending invites
+  = resources_table @pending_invites, :fields => [:email, :used, :approved, :created_at], :headers => ["Email", "Used", "Approved", "Requested At"], :link_action => nil
+  
+  %h2 Used invites
+  = resources_table @used_invites, :fields => [:email, :used, :approved, :created_at], :headers => ["Email", "Used", "Approved", "Requested At"], :link_action => nil
+  
+- content_for :sidebar do
+  %h2 Update Invites
+  %p Default Invites Count: 3
+  %p= "Current Invites Total: #{User.invite_count}"
+  
+  %hr
+
+  - form_tag reset_admin_invites_url do |i|
+    .field
+      = label(:invite, :number, "Reset invites to:")
+      = text_field(:invite, :number, :size => 3, :id => "update_invites")
+    .form_actions
+      = submit_tag("Update invites")

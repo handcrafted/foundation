@@ -1,0 +1,184 @@
+--- !ruby/object:Gem::Specification 
+name: friendly_id
+version: !ruby/object:Gem::Version 
+  version: 2.1.1
+platform: ruby
+authors: 
+- Norman Clarke
+- Adrian Mugnolo
+- Emilio Tagua
+autorequire: 
+bindir: bin
+cert_chain: 
+- |
+  -----BEGIN CERTIFICATE-----
+  MIIDNDCCAhygAwIBAgIBADANBgkqhkiG9w0BAQUFADBAMQ8wDQYDVQQDDAZub3Jt
+  YW4xGDAWBgoJkiaJk/IsZAEZFghyYW5kb21iYTETMBEGCgmSJomT8ixkARkWA29y
+  ZzAeFw0wODA3MjUxOTEyMDJaFw0wOTA3MjUxOTEyMDJaMEAxDzANBgNVBAMMBm5v
+  cm1hbjEYMBYGCgmSJomT8ixkARkWCHJhbmRvbWJhMRMwEQYKCZImiZPyLGQBGRYD
+  b3JnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0MuX/i3u1A7Gu2pC
+  y3tUIeGen3nJ8KrMpugJ2bo/VRcOLwo3bQl742idpfUE/Wq3rXexxc0Dg9jKQ8yb
+  1vHqM0s29UmC+UJjKG87eqQDXiq8jHgRcvykGmTZE8GBAVYvm0Wsm7aXWW6hMM/z
+  9QnhZHmBjCaBb8LXsXCgNHFctKkbtxmEXQk2j9pfWuMVSWVVXJR8Nd03u8G2k4RS
+  DhvPTP0eAsWRda/6oxGm+QDYv1tfwDVtqUEgD0zFFlpqJcJiKjn/vquJc8tPMYwK
+  E7eh4J9cT83sgTGs65l9e2Z9cF920DQMJmkzSAVpm7LKSglfO+WWGQlpagZbcC3J
+  hoR5WQIDAQABozkwNzAJBgNVHRMEAjAAMAsGA1UdDwQEAwIEsDAdBgNVHQ4EFgQU
+  axQXpjRK4llQWMZYVQvaZIJ7/a0wDQYJKoZIhvcNAQEFBQADggEBABappQnc8jtY
+  ZjbWN1Ya8emsRx2w//Z0LElusQ4PjBfWOzDjQ/BM6JjBA0tC1UyDISpTxD507lZ8
+  ydTETFAbzTrjJwBwwc1fxwgNm6MZQkZ/7A6WO7OfQw+nkiEaDw7fa10Gd4DBCqhY
+  Ot72besSspWtxuzTkpl/9YjbUk/XGL2ZjONUUsdzig12eGA659E0AM7LreIiLvSu
+  EI6rjC8mzEcTVXpeZKtVL5Ba7JSpWT5ojVXF8b4+5o3W5iSH2s4vWeRCS3KK3cww
+  sJ9/D9IfrPBgbrLYAldiZhGbSxBmwc6mbpPxWaT7SKRbw+XhSGhEeYbBcJs+8gvo
+  h7fbBRfStxI=
+  -----END CERTIFICATE-----
+
+date: 2009-03-24 00:00:00 -04:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: activerecord
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.0.0
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.0.0
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: newgem
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.2.3
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: Shoulda
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.2.0
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: sqlite3-ruby
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: "0"
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.8.0
+    version: 
+description: A comprehensive slugging and pretty-URL plugin for ActiveRecord.
+email: 
+- norman@randomba.org
+- adrian@randomba.org
+- miloops@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- Manifest.txt
+- README.rdoc
+files: 
+- History.txt
+- MIT-LICENSE
+- Manifest.txt
+- README.rdoc
+- Rakefile
+- config/website.yml
+- friendly_id.gemspec
+- generators/friendly_id/friendly_id_generator.rb
+- generators/friendly_id/templates/create_slugs.rb
+- generators/friendly_id_20_upgrade/friendly_id_20_upgrade_generator.rb
+- generators/friendly_id_20_upgrade/templates/upgrade_friendly_id_to_20.rb
+- init.rb
+- lib/friendly_id.rb
+- lib/friendly_id/helpers.rb
+- lib/friendly_id/non_sluggable_class_methods.rb
+- lib/friendly_id/non_sluggable_instance_methods.rb
+- lib/friendly_id/slug.rb
+- lib/friendly_id/sluggable_class_methods.rb
+- lib/friendly_id/sluggable_instance_methods.rb
+- lib/friendly_id/version.rb
+- lib/tasks/friendly_id.rake
+- lib/tasks/friendly_id.rb
+- test/custom_slug_normalizer_test.rb
+- test/models/book.rb
+- test/models/country.rb
+- test/models/novel.rb
+- test/models/person.rb
+- test/models/post.rb
+- test/models/thing.rb
+- test/models/user.rb
+- test/non_slugged_test.rb
+- test/schema.rb
+- test/scoped_model_test.rb
+- test/slug_test.rb
+- test/slugged_model_test.rb
+- test/sti_test.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://friendly-id.rubyforge.org/
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: friendly-id
+rubygems_version: 1.3.2
+signing_key: 
+specification_version: 2
+summary: A comprehensive slugging and pretty-URL plugin for ActiveRecord.
+test_files: 
+- test/custom_slug_normalizer_test.rb
+- test/non_slugged_test.rb
+- test/scoped_model_test.rb
+- test/slug_test.rb
+- test/slugged_model_test.rb
+- test/sti_test.rb

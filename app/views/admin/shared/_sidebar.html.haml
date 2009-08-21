@@ -1,0 +1,5 @@
+- @sidebar = (yield :sidebar)
+- unless @sidebar.blank?
+  #page_sidebar
+    .padding
+      = @sidebar

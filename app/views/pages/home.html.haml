@@ -1,0 +1,12 @@
+- @partial_title = "Foundation"
+- @page_description = ""
+- @page_keywords = ""
+
+%p
+  - if signed_in?
+    You are signed in.
+  - else
+    Get started: 
+    = link_to "Sign-in", signin_url
+    or
+    = link_to "Sign-up", signup_url

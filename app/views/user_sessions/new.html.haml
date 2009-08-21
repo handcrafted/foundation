@@ -1,0 +1,10 @@
+#page_header
+  %h2
+    Sign In to Foundation
+#page_body
+  - form_for :user_session, :url => user_session_url, :builder => HandcraftedFormBuilder do |f|
+    - field_set_tag do
+      = f.text_field :email
+      = f.password_field :password
+      = f.submit "Sign In" do
+        - link_to "Reset Password", '#', :class => "password_reset"

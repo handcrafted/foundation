@@ -1,0 +1,12 @@
+= render :partial => "shared/head/javascript/site_javascript"
+
+/ jQuery
+= google_jquery :version => '1.3.2'#, :local => true
+
+/ jQuery TOOLS
+= javascript_include_tag "plugins/jquery.tools.min"
+
+/ Default JavaScripts
+= javascript_include_tag 'plugins/foundation/jquery.autocomplete', 'plugins/foundation/jquery.cookie', 'plugins/foundation/jquery.dimensions', 'plugins/foundation/jquery.elastic', 'plugins/foundation/jquery.example', 'plugins/foundation/jquery.livequery', 'plugins/foundation/jquery.tablesorter', :cache => "foundation_js"
+
+= javascript_include_tag 'application', :cache => "application_js"

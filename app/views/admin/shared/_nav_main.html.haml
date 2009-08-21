@@ -1,0 +1,14 @@
+#nav_main.clearfix
+  %ul
+    %li.dashboard
+      = link_to "Dashboard", admin_dashboard_url
+    %li.users
+      = link_to "Users", admin_users_url
+    %li.emails
+      = link_to "Emails", admin_emails_url
+    - if @site.beta_invites?
+      %li.invites
+        = link_to "Invites", admin_invites_url
+    - if @site.referrals?
+      %li.profiles
+        = link_to "Profiles", admin_profiles_url
