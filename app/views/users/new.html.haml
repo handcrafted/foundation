@@ -1,7 +1,7 @@
 #page_body
 
   %h3 Sign up for an Account
-  = render :partial => "shared/beta/beta_notice"
+  = render :partial => "shared/notice_beta"
   = error_messages_for :user
   - form_for :user, :url => users_path, :builder => HandcraftedFormBuilder do |f|
     %fieldset
