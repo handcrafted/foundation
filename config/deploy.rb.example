@@ -1,0 +1,46 @@
+require './vlad/sphinx'
+require './vlad/campfire'
+require './vlad/delayed_job'
+require './vlad/whenever'
+
+set :application, "app"
+set :domain,      "app.com"
+set :deploy_to,   "/data/app.com"
+set :repository,  "your_repo"
+set :revisions, 5
+set :campfire_room, "CF Room"
+
+## Multiserver deploy setup
+#set :deploy_host, 'server1.gethandcrafted.com'
+#role :app, 'server1.gethandcrafted.com'
+#role :app, 'server2.gethandcrafted.com'
+#role :db,  deploy_host, :primary => true
+
+## Set this to the same as your app server if you don't have multiple domains
+role :job, 'job_server1.gethandcrafted.com'
+
+namespace :vlad do
+  
+  desc 'Runs vlad:update, vlad:symlink, vlad:migrate and vlad:start'
+  task :deploy => ['vlad:update', 'vlad:symlink', 'vlad:migrate', 'vlad:cleanup', 'vlad:start_app']
+
+  Rake::Task["cleanup"].options[:roles] = :db
+
+  desc 'Symlinks your custom directories'
+  remote_task :symlink, :roles => :deploy_host do
+    run "ln -s #{shared_path}/config/database.yml #{latest_release}/config"
+  end
+  
+  desc 'Setup your custom directories in shared.'
+  remote_task :setup_shared, :roles => :deploy_host do
+    dirs = %w(attachments).map { |d| File.join(shared_path, d) }
+    run "umask 02 && mkdir -p #{dirs.join(' ')}"
+  end
+  
+  # Chain our own setup tasks
+  task :setup do
+    Rake::Task['vlad:setup_app'].invoke
+    Rake::Task['vlad:setup_shared'].invoke
+  end
+
+end
