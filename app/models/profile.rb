@@ -10,7 +10,7 @@ class Profile < ActiveRecord::Base
   
   named_scope :referrers, :conditions => {:referral_id => nil}
   
-  has_attached_file :avatar, :styles => {:thumb => "16x16>", :small => "48x48>", :large => "100x100>", :xlarge => "150x150>"}, :default_url => "/images/default_:style_avatar.png"
+  has_attached_file :avatar, :styles => {:thumb => "16x16>", :small => "48x48>", :large => "100x100>", :xlarge => "150x150>"}, :default_url => "/images/foundation/default_:style_avatar.png"
   
   def fullname
     return nil unless first_name && last_name
