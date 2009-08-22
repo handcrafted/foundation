@@ -1,0 +1,15 @@
+.columns.one.clearfix
+  .column.one
+    %h1= @job.id
+    %h2= "Runs at #{@job.run_at.to_s(:date_time)}"
+
+    %dt Handler
+    %dd= @job.handler
+    
+    - if @job.last_error
+      %dt Errors
+      %dd= @job.last_error
+      
+    - if @job.locked_by
+      %dt Locked By
+      %dd= @job.locked_by

@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :emails, :collection => {:manage => :post}
     admin.resources :users, :collection => {:manage => :post}
     admin.resources :profiles, :collection => {:manage => :post}
+    admin.resources :jobs, :collection => {:manage => :post, :purge_queue => :get}
     # APP MARKER - Place app specific routes below this line
   end
   
