@@ -18,8 +18,15 @@ module HoptoadNotifier
 
   IGNORE_USER_AGENT_DEFAULT = []
 
-  VERSION = "1.2.2"
+  VERSION = "1.2.4"
   LOG_PREFIX = "** [Hoptoad] "
+
+  HEADERS = {
+    'Content-type'             => 'application/x-yaml',
+    'Accept'                   => 'text/xml, application/xml',
+    'X-Hoptoad-Client-Name'    => 'Hoptoad Notifier',
+    'X-Hoptoad-Client-Version' => VERSION
+  }
 
   class << self
     attr_accessor :host, :port, :secure, :api_key, :http_open_timeout, :http_read_timeout,
@@ -98,7 +105,7 @@ module HoptoadNotifier
     # Returns a list of parameters that should be filtered out of what is sent to Hoptoad.
     # By default, all "password" attributes will have their contents replaced.
     def params_filters
-      @params_filters ||= %w(password)
+      @params_filters ||= %w(password password_confirmation)
     end
 
     def environment_filters
@@ -217,6 +224,7 @@ module HoptoadNotifier
       if base.instance_methods.map(&:to_s).include? 'rescue_action_in_public' and !base.instance_methods.map(&:to_s).include? 'rescue_action_in_public_without_hoptoad'
         base.send(:alias_method, :rescue_action_in_public_without_hoptoad, :rescue_action_in_public)
         base.send(:alias_method, :rescue_action_in_public, :rescue_action_in_public_with_hoptoad)
+        base.hide_action(:notify_hoptoad, :inform_hoptoad) if base.respond_to?(:hide_action)
       end
     end
 
@@ -321,11 +329,6 @@ module HoptoadNotifier
     end
 
     def send_to_hoptoad data #:nodoc:
-      headers = {
-        'Content-type' => 'application/x-yaml',
-        'Accept' => 'text/xml, application/xml'
-      }
-
       url = HoptoadNotifier.url
       http = Net::HTTP::Proxy(HoptoadNotifier.proxy_host,
                               HoptoadNotifier.proxy_port,
@@ -335,10 +338,10 @@ module HoptoadNotifier
       http.use_ssl = true
       http.read_timeout = HoptoadNotifier.http_read_timeout
       http.open_timeout = HoptoadNotifier.http_open_timeout
-      http.use_ssl = !!HoptoadNotifier.secure 
+      http.use_ssl = !!HoptoadNotifier.secure
 
       response = begin
-                   http.post(url.path, stringify_keys(data).to_yaml, headers)
+                   http.post(url.path, stringify_keys(data).to_yaml, HEADERS)
                  rescue TimeoutError => e
                    log :error, "Timeout while contacting the Hoptoad server."
                    nil
