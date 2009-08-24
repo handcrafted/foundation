@@ -1,4 +1,4 @@
-- if @page_description
+- unless @page_description.blank?
   %meta{:name => "description", :content => @page_description}
-- if @page_keywords
+- unless @page_keywords.blank?
   %meta{:name => "keywords", :content => @page_keywords}
