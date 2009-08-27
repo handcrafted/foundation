@@ -3,5 +3,5 @@
 
 #page_body.wide
   %h2 Jobs
-  = resources_table @jobs, :fields => [:id, :run_at, :failed_at], :headers => ["ID", "Run at", "Failed?"]
+  = sortable_table @jobs, :data => [:id, :run_at, :failed_at]
 

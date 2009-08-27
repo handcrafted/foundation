@@ -3,6 +3,6 @@
 
 #page_body.wide
   %h2 Emails
-  = resources_table @emails, :fields => [:name, :subject], :headers => ["Name", "Subject"], :link_action => :edit
+  = sortable_table @emails, :data => [:name, :subject], :link_action => :edit
 
   
