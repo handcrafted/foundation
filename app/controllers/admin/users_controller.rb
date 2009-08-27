@@ -1,5 +1,4 @@
 class Admin::UsersController < AdminController
-  more_actions User, {:destroy => "Remove"}
   before_filter :find_user, :except => [:index]
 
   def index

@@ -1,0 +1,17 @@
+%table
+  %thead
+    %tr
+      - options[:headers].each do |header|
+        %th=h header
+  
+  - if objects.respond_to?(:total_page)
+    %tfoot
+      %td{:colspan => options[:headers].size + 1}
+      
+  
+  %tbody
+    - objects.each do |object|
+      %tr
+        - options[:data].each do |object_data|
+          %td=h object.send(object_data.to_sym)
+        
