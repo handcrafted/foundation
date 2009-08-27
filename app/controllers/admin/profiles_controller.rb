@@ -1,5 +1,4 @@
 class Admin::ProfilesController < AdminController
-  more_actions Profile
 
   def index
     @profiles = Profile.find(:all)

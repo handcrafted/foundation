@@ -1,5 +1,4 @@
 class Admin::InvitesController < AdminController
-  more_actions Invite, {:approve => "Approve", :destroy => "Delete"}
   
   def index
     @pending_invites = Invite.unused

@@ -3,5 +3,5 @@
 
 #page_body.wide
   %h2 Profiles
-  = resources_table @profiles, :fields => [:email, :first_name, :last_name], :headers => ["Email", "First Name", "Last Name"], :link_action => :edit
+  = sortable_table @profiles, :data => [:email, :first_name, :last_name], :link_action => :edit
   

@@ -1,5 +1,4 @@
 class Admin::EmailsController < AdminController
-  more_actions EmailTemplate, {:destroy => "Delete"}
 
   def index
     @emails = EmailTemplate.find(:all)

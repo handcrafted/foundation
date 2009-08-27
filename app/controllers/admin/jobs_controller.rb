@@ -1,5 +1,4 @@
 class Admin::JobsController < AdminController
-  more_actions Delayed::Job, {:destroy => "Delete"}
 
   def index
     @jobs = Delayed::Job.find(:all)

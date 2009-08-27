@@ -3,10 +3,10 @@
 
 #page_body
   %h2 Pending invites
-  = resources_table @pending_invites, :fields => [:email, :used, :approved, :created_at], :headers => ["Email", "Used", "Approved", "Requested At"], :link_action => nil
+  = sortable_table @pending_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil
   
   %h2 Used invites
-  = resources_table @used_invites, :fields => [:email, :used, :approved, :created_at], :headers => ["Email", "Used", "Approved", "Requested At"], :link_action => nil
+  = sortable_table @used_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil
   
 - content_for :sidebar do
   %h2 Update Invites
