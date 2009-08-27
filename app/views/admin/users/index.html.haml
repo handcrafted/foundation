@@ -1,4 +1,4 @@
 #page_header
   %h1 Users
 #page_body.wide
-  = resources_table @users, :headers => ["Email", "Signin count", "Current IP Address", "Admin"], :fields => [:email, :login_count, :current_login_ip, :admin], :link_action => :edit
+  = sortable_table @users, { :data => [:email, :created_at, :login_count, :current_login_ip], :link_action => :edit }
