@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-	// -- This file is for Bootstrap Admin views ONLY -- //
-
-	// Go Facebox go!	
-	$('a[rel*=facebox]').facebox();
+	// -- This file is for Foundation Admin views ONLY -- //
 	
 	// I'm on the outside
 	var internalLink = window.location.hostname
