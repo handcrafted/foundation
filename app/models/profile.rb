@@ -4,10 +4,6 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :referral, :class_name => "Profile", :foreign_key => "referral_id"
   
-  validates_uniqueness_of :email, :case_sensitive => false
-  validates_presence_of :email
-  validates_length_of :email,    :within => 3..100
-  
   named_scope :referrers, :conditions => {:referral_id => nil}
   
   has_attached_file :avatar, :styles => {:thumb => "16x16>", :small => "48x48>", :large => "100x100>", :xlarge => "150x150>"}, :default_url => "/images/foundation/default_:style_avatar.png"
@@ -20,7 +16,7 @@ class Profile < ActiveRecord::Base
   def add_referrals(friends_list, email_text)
     emails = Profile.parse_friends_email(friends_list)
     referrals = emails.collect do |email|
-      Profile.find_or_create_by_email(:email => email, :referral => self)
+      #Profile.find_or_create_by_email(:email => email, :referral => self)
     end
     Profile.send_referral_emails(self, referrals, email_text)
     referrals

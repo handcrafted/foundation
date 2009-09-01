@@ -14,14 +14,6 @@ describe Profile do
       @profile = Profile.new
     end
     
-    it "should validate uniqueness of email" do
-      @profile.should validate_uniqueness_of(:email)
-    end
-    
-    it "validates presence of email" do
-      @profile.should validate_presence_of(:email)
-    end
-    
     it "belongs to a user" do
       @profile.should belong_to(:user)
     end

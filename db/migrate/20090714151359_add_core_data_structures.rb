@@ -13,7 +13,6 @@ class AddCoreDataStructures < ActiveRecord::Migration
     end
     
     create_table :profiles do |t|
-      t.string :email
       t.string :first_name
       t.string :last_name
       t.integer :referral_id
@@ -25,7 +24,6 @@ class AddCoreDataStructures < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :profiles, :email
     add_index :profiles, :user_id
     
     create_table :invites do |t|
