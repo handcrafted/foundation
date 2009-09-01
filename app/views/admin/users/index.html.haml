@@ -1,4 +1,5 @@
 #page_header
-  %h1 Users
+  %h1 All Users
 #page_body.wide
+  %h2 Users
   = sortable_table @users, { :data => [:email, :created_at, :login_count, :current_login_ip], :link_action => :edit }

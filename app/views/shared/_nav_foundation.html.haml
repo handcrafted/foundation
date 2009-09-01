@@ -2,9 +2,12 @@
   %ul
     %li
       = link_to "Home", root_url
-    - if @site.beta_invites? && !signed_in?
+    - if @site.beta_invites?
       %li
-        = link_to "Request an Invite", new_invite_url
+        - if signed_in?
+          = link_to "Invite a Friend", new_invite_url
+        - else
+          = link_to "Request an Invite", new_invite_url
     - if @site.referrals?
       %li
         = link_to 'Refer a Friend', new_referral_url
