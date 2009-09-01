@@ -24,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signin "/signin", :controller => "user_sessions", :action => "new"
   # APP MARKER - Place app specific routes below this line
   
-  map.static_page "/:id", :controller => "pages", :action => "show"
   
   map.root :page
+  map.profile "/:id", :controller => "users", :action => "show"
 end

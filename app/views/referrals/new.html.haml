@@ -6,10 +6,12 @@
 
 #page_body.wide
   - form_for :referral, :url => referrals_url, :builder => HandcraftedFormBuilder do |f|
-    - field_set_tag do
-      = f.first_last :first_name, :last_name
-      = f.text_field :email, :example => "johnsmith@gmail.com"
-      = f.text_area :friends_email, :rows => 5
+    %fieldset
+      - unless signed_in?
+        = f.first_last :first_name, :last_name
+        = f.text_field :email, :example => "johnsmith@gmail.com"
+      = f.text_area :email_list, :rows => 5, :label => "Emails"
       = f.text_area :email_text
       = f.submit "Tell your friends" do
         - link_to "Cancel", root_url, :class => "red"
+

@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-require 'pp'
 
 describe ReferralsController do
   before(:each) do
@@ -20,23 +19,33 @@ describe ReferralsController do
   end
 
   describe "with referrals enabled" do
+    
     before(:each) do
       @site.referrals = true
       @site.save
     end
     
-    it "should GET new" do
+    it "should require a login for GET new" do
       get :new
-      response.should be_success
+      response.should be_redirect
     end
     
-    it "should process emails on POST create" do
-      ReferralMailer.stub!(:deliver_admin_confirmation)
-      Profile.stub!(:send_referral_emails)
-      ReferralMailer.stub!(:deliver_confirmation)
-      lambda do
-        post :create, :referral => {:email_text => "Testing", :friends_email => "Tom@test.com\r\nBob@test.com", :first_name => "Joe", :last_name => "Schmo", :email => "Joe@test.com"}
-      end.should change(Profile, :count).by(3)
+    describe "when logged in" do
+      
+      before(:each) do
+        unset_session
+        set_session_for(Factory(:valid_user))
+      end
+
+      it "should GET new" do
+        get :new
+        response.should be_success
+      end
+
+      it "sends emails when new emails are given" do
+        post :create, :referral => {:email_list => "joe@test.com\r\nbob@test.com", :email_text => "This is some sample text"}
+        Referral.find_by_email_address("joe@test.com").should_not be_blank
+      end
     end
     
   end

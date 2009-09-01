@@ -8,15 +8,14 @@ class AddCoreDataStructures < ActiveRecord::Migration
       t.boolean :beta_invites, :default => false
       t.boolean :user_avatars, :default => false
       t.boolean :referrals,    :default => false
+      t.boolean :public_profiles, :default => false
       
       t.timestamps
     end
     
     create_table :profiles do |t|
-      t.string :email
       t.string :first_name
       t.string :last_name
-      t.integer :referral_id
       t.integer :user_id
       t.boolean :subscribed, :default => false
       t.string :avatar_file_name
@@ -25,7 +24,6 @@ class AddCoreDataStructures < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :profiles, :email
     add_index :profiles, :user_id
     
     create_table :invites do |t|
@@ -48,6 +46,17 @@ class AddCoreDataStructures < ActiveRecord::Migration
       t.timestamps
     end
     
+    create_table :referrals do |t|
+      t.integer :referrer_id
+      t.integer :referred_user_id
+      t.string :email_address
+      t.text :email_text
+      
+      t.timestamps
+    end
+    add_index :referrals, :referrer_id
+    add_index :referrals, :referred_user_id
+    
     create_table :delayed_jobs, :force => true do |table|
       table.integer  :priority, :default => 0      # Allows some jobs to jump to the front of the queue
       table.integer  :attempts, :default => 0      # Provides for retries, but still fail eventually.
@@ -67,6 +76,7 @@ class AddCoreDataStructures < ActiveRecord::Migration
     drop_table :profiles
     drop_table :invites
     drop_table :email_templates
+    drop_table :referrals
     drop_table :delayed_jobs
   end
 end

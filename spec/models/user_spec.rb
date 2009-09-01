@@ -6,8 +6,24 @@ describe User do
     Factory.create(:valid_user)
   end
   
+  it "creates a valid user with an empty login string" do
+    Factory.create(:valid_user, :login => "")
+  end
+  
   it "doesn't create an invalid user" do
     Factory.build(:invalid_user).should be_invalid
+  end
+  
+  describe "with password generation" do
+    
+    it "saves the generated password for a user" do
+      pending
+    end
+    
+    it "marks a password for change" do
+      pending
+    end
+    
   end
   
   describe "with profile support" do

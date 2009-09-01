@@ -1,19 +1,20 @@
 class ReferralsController < ApplicationController
   before_filter :enabled?
-  
-  # layout "sessions.html.haml"
+  before_filter :require_user
   
   def index
     redirect_to new_referral_path
   end
   
   def new
-    @referrer_profile = current_user.profile if signed_in?
+    @referral = Referral.new(:referrer => current_user) if signed_in?
   end
 
   def create
-    referrer = Profile.find_or_create_by_email(:email => params[:referral][:email], :first_name => params[:referral][:first_name], :last_name => params[:referral][:last_name])
-    referrer.add_referrals(params[:referral][:friends_email], params[:referral][:email_text])
+    params[:referral][:email_list].split().each do |email|
+      Referral.create(:email_address => email, :email_text => params[:referral][:email_text], :referrer => current_user)
+    end
+    flash[:notice] = "Your emails have been sent."
     redirect_to root_url
   end
   

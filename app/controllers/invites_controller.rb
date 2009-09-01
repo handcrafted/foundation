@@ -7,10 +7,10 @@ class InvitesController < ApplicationController
   end
 
   def create
-    @invite = Invite.create(:email => params[:invite][:email], :approved => false)
+    @invite = Invite.new(:email => params[:invite][:email], :approved => false)
     @invite.add_inviter(current_user) if signed_in?
     respond_to do |format|
-      if @invite.errors.empty?
+      if @invite.save
         flash[:notice] = "Your invite request has been sent to a site admin." if @invite.unapproved?
         flash[:notice] = "Your invite has been sent" if @invite.approved?
         format.html { redirect_to root_url }

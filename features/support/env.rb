@@ -21,6 +21,7 @@ Webrat.configure do |config|
 end
 
 require 'cucumber/rails/rspec'
+require 'spec/expectations'
 require 'webrat/core/matchers'
 
 @site_settings = SiteSetting.create(:name => "Handcrafted Foundation", :admin_email => "admin@gethandcrafted.com", :url => "http://gethandcrafted.com", :description => "A website founded on beautiful handcrafted code")

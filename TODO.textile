@@ -1,3 +1,8 @@
 h1. Todo list
 
-* Add breadcrumb support
+* Add breadcrumb support (AS, please confirm you want this)
+* Add invite cucumber features
+* User generation with temp passwords
+* Remove profiles tab in admin, add referrals tab
+* Add admin controller/views generator
+* Fix form builder so that it doesn't pass bogus html attributes

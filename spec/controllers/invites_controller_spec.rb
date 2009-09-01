@@ -20,8 +20,8 @@ describe InvitesController do
     
     it "should render new invite action again when create failed" do
       invite = mock_model(Invite)
-      Invite.should_receive(:create).and_return(invite)
-      invite.should_receive(:errors).and_return([:email])
+      Invite.should_receive(:new).and_return(invite)
+      invite.should_receive(:save).and_return(false)
       post :create, :invite => {:email => "tom@test.com"}
       response.should render_template('new')
     end

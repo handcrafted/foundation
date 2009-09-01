@@ -1,0 +1,5 @@
+- form_for(Invite.new, :url => invites_path, :builder => HandcraftedFormBuilder ) do |f|
+  - field_set_tag do
+    = f.text_field :email
+    = f.submit "Request Invite" do
+      - link_to "Cancel", root_url, :class => "red"

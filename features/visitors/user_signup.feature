@@ -1,7 +1,7 @@
 Feature: Sign up
 
   In order to get access to protected sections of the site
-  As a user
+  As a visitor
   I should be able to sign up
   
 

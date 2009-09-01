@@ -10,6 +10,7 @@
     %fieldset
       %legend Sign up for an Account
       = f.text_field :email, :example => "johnsmith@gmail.com"
+      = f.text_field :login, :label => "Profile url"
       = f.password_field :password
       = f.password_field :password_confirmation
       = f.submit "Sign up" do

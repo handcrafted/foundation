@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:edit, :update]
+  before_filter :check_for_public_profiles, :only => :show
   
   def new
     @user = User.new
@@ -17,7 +18,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = @current_user
+    if params[:id].blank?
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   def edit
@@ -32,6 +37,12 @@ class UsersController < ApplicationController
     else
       render :action => :edit
     end
+  end
+  
+  private
+  
+  def check_for_public_profiles
+    require_user unless @site.public_profiles?
   end
   
 end

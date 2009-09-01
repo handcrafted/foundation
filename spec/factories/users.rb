@@ -1,5 +1,6 @@
 Factory.define :valid_user , :class => User do |u|
   u.email { Factory.next(:email) }
+  u.login "valid_user"
   u.password "123456"
   u.password_confirmation "123456"
   u.single_access_token { Factory.next(:single_access_token) }

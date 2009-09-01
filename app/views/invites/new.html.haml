@@ -9,8 +9,4 @@
 
 #page_body.wide
   = error_messages_for :invite
-  - form_for(@invite, :url => invites_path, :builder => HandcraftedFormBuilder ) do |f|
-    - field_set_tag do
-      = f.text_field :email
-      = f.submit "Request Invite" do
-        - link_to "Cancel", root_url, :class => "red"
+  = render :partial => "invite"

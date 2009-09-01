@@ -6,6 +6,10 @@ Given /^no user exists with an email of "(.*)"$/ do |email|
   User.find_by_email(email).should be_nil
 end
 
+Given /^a user exists with an email of "(.*)"$/ do |email|
+  user = Factory :valid_user, :email => email
+end
+
 Given /^I am signed up and confirmed as "(.*)\/(.*)"$/ do |email, password|
   user = Factory :valid_user,
     :email                 => email,

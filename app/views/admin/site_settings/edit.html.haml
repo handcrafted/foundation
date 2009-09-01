@@ -12,6 +12,7 @@
       = f.text_field :admin_email, :label => "Outgoing email address", :example => "hello@app.gethandcrafted.com"
       = f.check_box :user_avatars, :label => "Allow users to upload avatar pictures?"
       = f.check_box :beta_invites, :label => "Enable beta invites?"
+      = f.check_box :public_profiles, :label => "Enable public profile viewing?"
       = f.check_box :referrals, :label => "Enable tell a friend?"
       = f.submit "Update" do
         - link_to "Cancel", admin_dashboard_url, :class => "cancel"

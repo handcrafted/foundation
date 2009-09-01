@@ -1,4 +1,4 @@
-- if @site.beta_invites?
+- if @site.beta_invites? && signed_in?
   .notice.invites
     .padding
       %h4
