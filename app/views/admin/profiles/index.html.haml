@@ -1,7 +1,5 @@
 #page_header
-  %h1 User Profiles
+  %h1= fetch_section_name
 
 #page_body.wide
-  %h2 Profiles
-  = sortable_table @profiles, :data => [:email, :first_name, :last_name], :link_action => :edit
-  
+  = sortable_table @profiles, :data => [:email, :first_name, :last_name], :link_action => :edits, :no_header => true

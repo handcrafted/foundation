@@ -1,5 +1,5 @@
 #page_header
-  %h1 All Users
+  %h1
+    = fetch_section_name
 #page_body.wide
-  %h2 Users
-  = sortable_table @users, { :data => [:email, :created_at, :login_count, :current_login_ip], :link_action => :edit }
+  = sortable_table @users, { :data => [:email, :created_at, :login_count, :current_login_ip], :link_action => :edit, :no_header => true }

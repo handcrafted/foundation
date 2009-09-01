@@ -1,6 +1,6 @@
 #page_header
-  %h1 Jobs Queue
+  %h1
+    = fetch_section_name
 
 #page_body.wide
-  %h2 Jobs
-  = sortable_table @jobs, :data => [:id, :run_at, :failed_at]
+  = sortable_table @jobs, :data => [:id, :run_at, :failed_at], :no_header => true

@@ -1,7 +1,7 @@
 module SortableTableHelper
   
   def sortable_table(objects, options = {})
-    options.reverse_merge!(default_options(options))
+    options.reverse_merge!(default_options(options, objects))
     render :partial => "shared/sortable_table/table", :locals => {:objects => objects, :options => options}
   end
   
@@ -14,8 +14,14 @@ module SortableTableHelper
     {:headers => columns, :data => columns}
   end
   
-  def default_options(options)
-    options[:model] = fetch_model(objects.first) if options[:model].nil? && options[:data].nil?
+  def fetch_section_name(controller = params[:controller])
+    name = controller.split("/").last
+    name.humanize
+  end
+  
+  def default_options(options, objects)
+    options[:name] ||= fetch_section_name
+    options[:model] ||= fetch_model(objects.first)
     options[:data] ||= fetch_headers(options[:model])
     options[:headers] ||= options[:data].collect {|header| header.to_s.humanize}
     options[:link_action] ||= :show
@@ -23,5 +29,4 @@ module SortableTableHelper
     options
   end
 
-  
 end

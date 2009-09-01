@@ -2,11 +2,9 @@
   %h1 Invites
 
 #page_body
-  %h2 Pending invites
-  = sortable_table @pending_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil
+  = sortable_table @pending_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil, :name => "Pending invites"
   
-  %h2 Used invites
-  = sortable_table @used_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil
+  = sortable_table @used_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil, :name => "Used invites"
   
 - content_for :sidebar do
   #invites
