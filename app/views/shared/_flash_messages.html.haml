@@ -1,6 +1,5 @@
 - flash.each do |type, msg|
-  %div{:id => "#{type}"}
-    %div{:id => "#{type}_wrap"}
+  .flash{:class => "#{type}"}
+    .padding
       %p
-        %span
-          = html_escape(msg)
+        = html_escape(msg)

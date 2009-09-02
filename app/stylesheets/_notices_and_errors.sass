@@ -1,31 +1,11 @@
-//** Flash styles
-#notice, #warning
-  font-size: 12px
-  margin: 0 0 20px 0
-
-#notice
-  background-color: #FFFFEA
-  border: 1px solid #ECECD8
-  color: #0d0d0d
-  margin: 0 0 20px 0
-  #notice_wrap
-    padding: 10px
-
-#warning
-  background-color: #c00
-  border: 1px solid #9A0000
-  color: #fff
-  #warning_wrap
-    padding: 10px
-    
-//** Notice styles
-  TODO - Merge this and the flash together. Update the flashes markup if need be.
+//** Flash and Notice styles
   The background declarations are broken out into seperate declarations
   to be more future friendly to using sub-classes to extend this further
   For example: .notice.warning
-.notice
+.notice,
+.flash
   background-color: #ffffea
-  background-image: url(/images/foundation/icon_info.png)
+  background-image: url(/images/foundation/icon_info_32.png)
   background-repeat: no-repeat
   background-position: 15px 12px
   border: 1px solid #ececd8
@@ -40,6 +20,17 @@
   a
     &:hover
       text-decoration: underline
+
+.flash
+  background-position: 15px 50%
+  font-size: 14px
+  & > .padding
+    padding: 17px 10px 17px 63px
+  &.warning
+    background-color: #D90B0B
+    background-image: url(/images/foundation/icon_stop_light_32.png)
+    border: 1px solid #9A0000
+    color: #fff
 
 //** Form error styles
   We are using the Rails default ids here.
