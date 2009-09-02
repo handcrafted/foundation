@@ -1,6 +1,7 @@
-#nav_aux
-  %ul
-    %li.current_user
-      = link_to current_user.display_name, edit_user_url(current_user)
-    %li.signout
-      = link_to "Sign Out", signout_url
+- if signed_in?
+  #nav_aux
+    %ul
+      %li.current_user
+        = link_to current_user.display_name, edit_user_url(current_user)
+      %li.signout
+        = link_to "Sign Out", signout_url
