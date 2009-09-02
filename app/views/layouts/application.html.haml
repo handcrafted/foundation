@@ -4,8 +4,10 @@
   %head= render :partial => "shared/head/head_site"
   %body{:class => "application #{body_class(params[:controller], params[:id])} #{action_name}"}
     #mast_head
-      #branding
-        %h1= link_to @site.name, root_url
+      .container
+        #branding
+          %h1= link_to @site.name, root_url
+        = render :partial => "shared/nav_aux"
       = render :partial => "shared/nav_foundation"
     #page
       = render :partial => "shared/flash_messages"

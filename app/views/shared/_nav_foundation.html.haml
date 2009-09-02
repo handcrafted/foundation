@@ -17,8 +17,6 @@
     - if signed_in?
       %li.account
         = link_to 'My Account', user_url(current_user)
-      %li.signout
-        = link_to "Sign Out", signout_url
     - if signed_out?
       %li.signup
         = link_to "Sign Up", signup_url

@@ -2,7 +2,5 @@
   %ul
     %li.current_user
       = link_to current_user.display_name, edit_admin_user_url(current_user)
-    %li.site_settings
-      = link_to "Site Settings", edit_admin_site_setting_url
     %li.signout
       = link_to "Sign Out", signout_url
