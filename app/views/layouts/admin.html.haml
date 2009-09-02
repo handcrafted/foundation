@@ -1,22 +1,15 @@
 !!! Strict
 = render :partial => "shared/head/signature"
 %html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", :'xml:lang' => "en"}
-  %head
-    = render :partial => "shared/head/head_admin"
+  %head= render :partial => "shared/head/head_admin"
   %body{:class => "application #{body_class(params[:controller], params[:id])} #{action_name}"}
     #mast_head
-      .inner
-        #branding
-          = link_to @site.name, root_url
-        = render :partial => "admin/shared/nav_main"
-        = render :partial => "admin/shared/nav_aux"
-    #wrap
-      #container.clearfix
-        = render :partial => "shared/flash_messages"
-        #page
-          .padding
-            .container.clearfix
-              = yield
-              = render :partial => "admin/shared/sidebar"
-        = render :partial => "admin/shared/footer"
+      #branding
+        %h1= link_to @site.name, root_url
+      = render :partial => "admin/shared/nav_main"
+      = render :partial => "admin/shared/nav_aux"
+    #page
+      = render :partial => "shared/flash_messages"
+      = yield
+    = render :partial => "admin/shared/footer"
     = render :partial => "shared/foundation_footer"

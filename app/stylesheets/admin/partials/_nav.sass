@@ -1,44 +1,63 @@
-// #nav_main
-=nav_main_current
-  background: #ddd
-  color: #0d0d0d
-  text-decoration: none
-  &:hover
+#nav_foundation
+  background: #282828
+  background: rgba(0, 0, 0, 0.2)
+  border-bottom: 4px solid #ddd
+  margin-top: 25px
+  ul
+    padding-top: 10px
+    +row
+    +clearfix
+    li
+      display: inline
+      +float-left
+      margin-right: 3px
+      &.signin,
+      &.signup,
+      &.signout,
+      &.admin,
+      &.view_site,
+      &.site_settings,
+      &.current_user
+        +float-right
+        margin-right: 0
+        margin-left: 3px
+      a
+        background: #1b1b1b
+        background: rgba(0, 0, 0, 0.3)
+        color: #ddd
+        display: inline-block
+        padding: 6px 16px
+        &:hover
+          background: #ddd
+          color: #0d0d0d
+          text-decoration: none
+
+//** Show current page
+=nav_foundation_current
+  a
     background: #ddd
     color: #0d0d0d
-    text-decoration: none
+    font-weight: bold
 
-body.admin_dashboard #nav_main .dashboard a,
-body.admin_users #nav_main .users a,
-body.admin_emails #nav_main .emails a,
-body.admin_invites #nav_main .invites a,
-body.admin_profiles #nav_main .profiles a,
-body.admin_jobs #nav_main .jobs a
-  +nav_main_current
-  
-#nav_main
-  height: 30px
-  overflow: hidden
-  position: relative
-  ul
-    width: 100%
-  ul, li, a
-    +float("left")
-  li
-    margin-right: 2px
-    a
-      background: #212121
-      color: #fff
-      line-height: 30px
-      padding: 0 14px
-      text-decoration: none
-      &:hover
-        background: #353535
-        text-decoration: underline
+body.application.show #nav_foundation li.home,
+body.application.users.show #nav_foundation li.account,
+body.application.users.edit #nav_foundation li.account,
+body.application.user_sessions #nav_foundation li.signin,
+body.application.users.new #nav_foundation li.signup,
+body.application.admin_dashboard #nav_foundation li.dashboard,
+body.application.admin_users #nav_foundation li.users,
+body.application.admin_emails #nav_foundation li.emails,
+body.application.admin_invites #nav_foundation li.invites,
+body.application.admin_profiles #nav_foundation li.profiles,
+body.application.admin_jobs #nav_foundation li.jobs,
+body.invites #nav_foundation li.invites,
+body.referrals #nav_foundation li.referrals
+  +nav_foundation_current
 
-// #nav_aux
+// Alternative navigation styles
 #nav_aux
   display: block
+  display: none
   font-size: 11px
   position: absolute
   top: 8px

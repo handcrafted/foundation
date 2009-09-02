@@ -5,21 +5,22 @@
   = sortable_table @pending_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil, :name => "Pending invites"
   
   = sortable_table @used_invites, :data => [:email, :used, :approved, :created_at], :link_action => nil, :name => "Used invites"
-  
-- content_for :sidebar do
-  #invites
-    %h2
-      Update Invites
-    %ul
-      %li
-        Default Invites Count: 3
-      %li
-        Current Invites Total: 
-        = User.invite_count
 
-    - form_tag reset_admin_invites_url do |i|
-      .field
-        = label(:invite, :number, "Update Invites")
-        = text_field(:invite, :number, :size => 3, :id => "update_invites")
-      .form_actions
-        = submit_tag("Update")
+#page_sidebar
+  .wrap
+    #invites
+      %h2
+        Update Invites
+      %ul
+        %li
+          Default Invites Count: 3
+        %li
+          Current Invites Total: 
+          = User.invite_count
+
+      - form_tag reset_admin_invites_url do |i|
+        .field
+          = label(:invite, :number, "Update Invites")
+          = text_field(:invite, :number, :size => 3, :id => "update_invites")
+        .form_actions
+          = submit_tag("Update")

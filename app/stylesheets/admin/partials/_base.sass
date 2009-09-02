@@ -1,7 +1,10 @@
 @import blueprint/reset
 @import compass/utilities
 @import partials/border_radius
+@import partials/colors
 @import partials/forms
+@import partials/notices_and_errors
+@import partials/grid
 @import admin/partials/nav
 
 =base-font
@@ -15,7 +18,7 @@ body
   padding: 0
 body
   +base-font
-  background: #f1f1f1
+  background: #fff
   color: #0d0d0d
 
 // Mixins  
@@ -26,11 +29,19 @@ body
 =float(!direction)
   display: inline
   float = !direction
+=min-height(!height)
+  min-height = !height
+  height: auto !important
+  height = !height
 
 // Because the reset doesn't do it
 ul
   li
     list-style: none
+h1, h2, h3, h4, h5, h6
+  font-weight: bold
+.clearfix
+  +clearfix
     
 // Links
 a

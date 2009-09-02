@@ -1,4 +1,4 @@
-#nav_main.clearfix
+#nav_foundation
   %ul
     %li.dashboard
       = link_to "Dashboard", admin_dashboard_url
@@ -14,3 +14,11 @@
         = link_to "Profiles", admin_profiles_url
     %li.jobs
       = link_to "Jobs", admin_jobs_url
+    %li.signout
+      = link_to "Logout", signout_url
+    %li.view_site
+      = link_to "View Site", root_url
+    %li.site_settings
+      = link_to "Site Settings", edit_admin_site_setting_url
+    %li.current_user
+      = link_to "My Account", edit_user_url(current_user)
