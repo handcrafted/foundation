@@ -56,30 +56,31 @@ body.referrals #nav_foundation li.referrals
 
 // Alternative navigation styles
 #nav_aux
-  display: block
-  display: none
+  +pie-clearfix
   font-size: 11px
-  position: absolute
-  top: 8px
-  right: 0
-  ul, li
-    +float("left")
+  ul
+    +float-right
+    margin-top: 4px
+  li
+    +float-left
   ul
     li
+      border-left: 1px solid #282828
+      border-left: 1px solid rgba(0, 0, 0, 0.4)
       color: #fff
-      list-style: none
-      &.signout_url
-        border-left: 1px solid #353535
-        margin-left: 5px
-        padding-left: 5px
-      &.current_user
-        border-right: 1px solid #353535
-        margin-right: 5px
-        padding-right: 5px
+      margin-left: 5px
+      padding-left: 5px
+      &:first-child
+        border: none
+        margin-left: 0
+        padding-left: 0
+
     a
       color: #fff
+      display: inline-block
       padding: 3px 4px
       text-decoration: underline
       &:hover
-        background: #353535
+        background: #282828
+        background: rgba(0, 0, 0, 0.4)
         text-decoration: none
