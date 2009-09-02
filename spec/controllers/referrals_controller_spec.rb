@@ -30,13 +30,8 @@ describe ReferralsController do
       response.should be_success
     end
     
-    it "should process emails on POST create" do
-      ReferralMailer.stub!(:deliver_admin_confirmation)
-      Profile.stub!(:send_referral_emails)
-      ReferralMailer.stub!(:deliver_confirmation)
-      lambda do
-        post :create, :referral => {:email_text => "Testing", :friends_email => "Tom@test.com\r\nBob@test.com", :first_name => "Joe", :last_name => "Schmo", :email => "Joe@test.com"}
-      end.should change(Profile, :count).by(3)
+    it "sends emails when new emails are given" do
+      pending
     end
     
   end

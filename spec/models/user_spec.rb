@@ -10,6 +10,18 @@ describe User do
     Factory.build(:invalid_user).should be_invalid
   end
   
+  describe "with password generation" do
+    
+    it "saves the generated password for a user" do
+      pending
+    end
+    
+    it "marks a password for change" do
+      pending
+    end
+    
+  end
+  
   describe "with profile support" do
     
     before(:each) do
