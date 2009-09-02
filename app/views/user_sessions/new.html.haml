@@ -1,6 +1,9 @@
+= render :partial => "shared/notice_invite_required"
+
 #page_header
   %h2
     = "Sign In to #{@site.name}"
+
 #page_body
   - form_for :user_session, :url => user_session_url, :builder => HandcraftedFormBuilder do |f|
     - field_set_tag do

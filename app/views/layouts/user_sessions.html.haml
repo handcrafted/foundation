@@ -4,15 +4,13 @@
   %head
     = render :partial => "shared/head/head_site"
   %body{:class => "sessions #{body_class(params[:controller], params[:id])} #{action_name}"}
-    #wrap
-      #mast_head
-        #branding
-          %h1
-            = link_to @site.name, root_url
-      #page
-        .padding
-          .wrap.clearfix
-            = render :partial => "shared/flash_messages"
-            = yield
+    #mast_head
+      #branding
+        %h1
+          = link_to @site.name, root_url
+      = render :partial => "shared/nav_foundation"
+    #page
+      = render :partial => "shared/flash_messages"
+      = yield
     = render :partial => "shared/footer"
     = render :partial => "shared/foundation_footer"

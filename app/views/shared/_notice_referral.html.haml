@@ -1,0 +1,12 @@
+- if @site.beta_invites?
+  .notice.referral
+    .padding
+      %h4
+        Tell your friends about
+        = @site.name
+      %p
+        = "Thank you! Please tell all your friends about #{@site.name}!"
+        You can tell
+        %strong
+          5 friends
+        at once using the form below.

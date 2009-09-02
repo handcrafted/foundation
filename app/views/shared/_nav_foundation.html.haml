@@ -1,22 +1,24 @@
 #nav_foundation
   %ul
-    %li
+    %li.home
       = link_to "Home", root_url
+    - if signed_in? && current_user.admin?
+      %li.admin
+        = link_to "Admin", admin_url
     - if @site.beta_invites?
-      %li
+      %li.invites
         - if signed_in?
           = link_to "Invite a Friend", new_invite_url
         - else
           = link_to "Request an Invite", new_invite_url
     - if @site.referrals?
-      %li
+      %li.referrals
         = link_to 'Refer a Friend', new_referral_url
-    - if signed_out?
-      %li
-        = link_to "[ Sign in ]", signin_url
-    - if signed_in? && current_user.admin?
-      %li
-        = link_to "[ Admin ]", admin_url
     - if signed_in?
-      %li
-        = link_to "Sign out", signout_url
+      %li.signout
+        = link_to "Sign Out", signout_url
+    - if signed_out?
+      %li.signup
+        = link_to "Sign Up", signup_url
+      %li.signin
+        = link_to "Sign In", signin_url

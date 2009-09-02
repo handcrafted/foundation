@@ -3,9 +3,14 @@
 - else
   = render :partial => "shared/notice_beta"
 
-= error_messages_for :invite
-- form_for(@invite, :url => invites_path, :builder => HandcraftedFormBuilder ) do |f|
-  %fieldset
-    = f.text_field :email
-    = f.submit "Request Invite" do
-      - link_to "Cancel", root_url, :class => "cancel"
+#page_header
+  %h2
+    Invite a Friend
+
+#page_body.wide
+  = error_messages_for :invite
+  - form_for(@invite, :url => invites_path, :builder => HandcraftedFormBuilder ) do |f|
+    - field_set_tag do
+      = f.text_field :email
+      = f.submit "Request Invite" do
+        - link_to "Cancel", root_url, :class => "cancel"

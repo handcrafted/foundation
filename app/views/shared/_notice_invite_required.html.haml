@@ -1,0 +1,11 @@
+- if @site.beta_invites?
+  .notice.invite_required
+    .padding
+      %h4
+        Invite Required
+      %p
+        At this time an invite is required to
+        = link_to "sign in", signin_url
+        or
+        = link_to "sign up", signup_url
+        = " &ndash; #{link_to "request an invite", new_invite_url}."

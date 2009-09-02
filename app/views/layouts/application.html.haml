@@ -4,21 +4,13 @@
   %head
     = render :partial => "shared/head/head_site"
   %body{:class => "application #{body_class(params[:controller], params[:id])} #{action_name}"}
-    #wrap
-      #mast_head
-        #branding
-          %h1
-            = link_to @site.name, root_url
-        = render :partial => "shared/nav_foundation"
-      #page
-        .padding
-          .wrap.clearfix
-            = render :partial => "shared/flash_messages"
-            #page_header
-              %h2
-                = body_class(params[:controller], params[:id]) || "Homepage"
-            #page_body
-              = yield
-            #page_sidebar
+    #mast_head
+      #branding
+        %h1
+          = link_to @site.name, root_url
+      = render :partial => "shared/nav_foundation"
+    #page
+      = render :partial => "shared/flash_messages"
+      = yield
     = render :partial => "shared/footer"
     = render :partial => "shared/foundation_footer"

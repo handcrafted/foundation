@@ -2,11 +2,32 @@
 - @page_description = @site.description
 - @page_keywords = "handcrafted, rails, foundation, bootstrap"
 
-%p
+#page_header
+  %h2
+    Homepage
+
+#page_body
   - if signed_in?
-    You are signed in.
+    %p
+      Cool, you are already signed in. Good work!
+    %p
+      OK, you can start building
+      %strong
+        your app
+      now....
   - else
-    Get started: 
-    = link_to "Sign-in", signin_url
-    or
-    = link_to "Sign-up", signup_url
+    %p
+      Seems you need to get started. Go ahead and
+      = link_to "sign in", signin_url
+      or
+      = link_to "sign up", signup_url
+      for a new account.
+
+#page_sidebar
+  .wrap
+    %p
+      Foundation is the starting point for each of Handcrafted's projects.
+    %p
+      We bake all our goodness in here.
+      %strong
+        Once.

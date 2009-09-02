@@ -1,0 +1,30 @@
+// Thanks to "The 1Kb Grid"
+// 12 columns, 60 pixels each, with 20 pixel gutter
+
+!pixels_each ||= 60px
+!gutter_width ||= 20px
+!grid_width ||= 960px
+!columns ||= 12
+
+=grid(!columns)
+  +column
+  @for !n from 1 through 1
+    width = !columns * !pixels_each
+  @for !n from 2 through 12
+    width = !columns * !pixels_each + !columns * !gutter_width - 20px
+
+=column
+  margin: 0 10px
+  overflow: hidden
+  float: left
+  display: inline
+
+=row
+  width: 960px
+  margin: 0 auto
+  overflow: hidden
+
+=row_row
+  margin: 0 -10px
+  width: auto
+  display: inline-block
