@@ -15,6 +15,8 @@
       %li.referrals
         = link_to 'Refer a Friend', new_referral_url
     - if signed_in?
+      %li.account
+        = link_to 'My Account', user_url(current_user)
       %li.signout
         = link_to "Sign Out", signout_url
     - if signed_out?
