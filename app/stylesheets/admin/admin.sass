@@ -4,22 +4,30 @@
 
 //** Core Grid Settings
 #branding, #page, #footer
-  +row
+  +row_960
 
 #mast_head > .container
-  +row
+  +row_960
   #branding
-    +grid(4)
+    +grid_960(4)
   #nav_aux
-    +grid(8)
+    +grid_960(8)
 
 #page_body
-  +grid(9)
+  +grid_960(9)
   &.wide
-    +grid(12)
+    +grid_960(12)
+
+  // Still fleshing this out
+  .columns
+    +row_700
+    .column.one
+      +grid_700(5)
+    .column.two
+      +grid_700(5)
 
 #page_sidebar
-  +grid(3)
+  +grid_960(3)
 
 //** Foundation Styles
 #mast_head

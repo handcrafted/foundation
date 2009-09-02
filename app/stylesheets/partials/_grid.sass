@@ -2,30 +2,59 @@
 // 12 columns, 60 pixels each, with 20 pixel gutter
 
 !pixels_each ||= 60px
-!gutter_width ||= 20px
+!gutter_width_960 ||= 20px
+!gutter_width_700 ||= 10px
 !grid_width ||= 960px
 !columns ||= 12
 
-=grid(!columns)
-  +column
+=grid_960(!columns)
+  +column_960
   @for !n from 1 through 1
     width = !columns * !pixels_each
   @for !n from 2 through 12
-    width = !columns * !pixels_each + !columns * !gutter_width - 20px
+    width = !columns * !pixels_each + !columns * !gutter_width_960 - 20px
 
-=column
-  margin: 0 10px
+=grid_700(!columns)
+  +column_700
+  @for !n from 1 through 1
+    width = !columns * !pixels_each
+  @for !n from 2 through 10
+    width = !columns * !pixels_each + !columns * !gutter_width_700 - 10px
+
+=column_base
   overflow: hidden
   float: left
   display: inline
+  
+=column_960
+  margin: 0 10px
+  +column_base
+  
+=column_700
+  margin: 0 5px
+  +column_base
 
-=row
+=row_base
   +pie-clearfix
-  width: 960px
   margin: 0 auto
   overflow: hidden
 
-=row_row
-  margin: 0 -10px
+=row_960
+  +row_base
+  width: 960px
+
+=row_700
+  +row_base
+  width: 700px
+
+=row_row_base
   width: auto
   display: inline-block
+
+=row_row_960
+  +row_base
+  margin: 0 -10px
+
+=row_row_700
+  +row_base
+  margin: 0 -5px
