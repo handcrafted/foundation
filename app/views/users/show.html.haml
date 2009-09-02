@@ -3,6 +3,7 @@
     = @user.email
     - if false#@site.user_avatar_upload?
       = image_tag(@user.profile.avatar.url(:thumb), :style => "position: absolute; top: 0; right: 0;")
+
 #page_body
   %p
     Click here to

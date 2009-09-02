@@ -1,12 +1,11 @@
 #page_header
   %h2
     Edit your Account
+
 #page_body
   = error_messages_for :user
   - form_for :user, :url => user_path(@user), :builder => HandcraftedFormBuilder, :html => {:method => :put, :multipart => true} do |f|
-    %fieldset
-      %legend Edit your details
-
+    - field_set_tag do
       = f.text_field :email, :example => "johnsmith@gmail.com"
       = f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
       - fields_for @user.profile, :builder => HandcraftedFormBuilder do |p|
