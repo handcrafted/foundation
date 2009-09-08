@@ -48,6 +48,8 @@ class AddCoreDataStructures < ActiveRecord::Migration
     create_table :referrals do |t|
       t.integer :referrer_id
       t.integer :referred_user_id
+      t.string :email_address
+      t.text :email_text
       
       t.timestamps
     end

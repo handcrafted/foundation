@@ -10,7 +10,7 @@ class ReferralsController < ApplicationController
   end
 
   def create
-    Referral.create_from_email_list(params[:referral])
+    logger.info params[:referral][:email_list].split().inspect
     redirect_to root_url
   end
   
