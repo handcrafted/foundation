@@ -1,11 +1,12 @@
+// Special thanks to ZURB and their Super Awesome Buttons with CSS3 and RGBA
 =awesome
   +awesome_shared
-  background: #222 url(http://zurb.com/images/alert-overlay.png) repeat-x
+  background: #222 url(/images/foundation/button_overlay.png) repeat-x
   border-bottom: 1px solid rgba(0,0,0,0.25)
   color: #fff
   cursor: pointer
   display: inline-block
-  padding: 5px 10px 6px
+  padding: 5px 10px
   position: relative
   text-decoration: none
   +border-radius("5px")
@@ -14,7 +15,7 @@
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
 
 =awesome_shared
-  font-size: 13px
+  font-size: 12px
   font-weight: bold
   line-height: 1
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
@@ -32,32 +33,46 @@
 
   &.small, &.small:visited
     font-size: 11px
-  &.medium, &.medium:visited
+  &.medium
     +awesome_shared
+    &:visited
+      +awesome_shared
   &.large, &.large:visited
     font-size: 14px
-    padding: 8px 14px 9px
-  &.green, &.green:visited
+    padding: 8px 14px
+  &.green
     background-color: #91bd09
-  &.green:hover
-    background-color: #749a02
-  &.blue, &.blue:visited
+    &:visited
+      background-color: #91bd09
+    &:hover
+      background-color: #749a02
+  &.blue
     background-color: #2daebf
-  &.blue:hover
-    background-color: #007d9a
-  &.red, &.red:visited
+    &:visited
+      background-color: #2daebf
+    &:hover
+      background-color: #007d9a
+  &.red
     background-color: #e33100
-  &.red:hover
-    background-color: #872300
-  &.magenta, &.magenta:visited
+    &:visited
+      background-color: #e33100
+    &:hover
+      background-color: #872300
+  &.magenta
     background-color: #a9014b
-  &.magenta:hover
-    background-color: #630030
-  &.orange, &.orange:visited
+    &:visited
+      background-color: #a9014b
+    &:hover
+      background-color: #630030
+  &.orange
     background-color: #ff5c00
-  &.orange:hover
-    background-color: #d45500
-  &.yellow, &.yellow:visited
+    &:visited
+      background-color: #ff5c00
+    &:hover
+      background-color: #d45500
+  &.yellow
     background-color: #ffb515
-  &.yellow:hover
-    background-color: #fc9200
+    &:visited
+      background-color: #ffb515
+    &:hover
+      background-color: #fc9200
