@@ -3,12 +3,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", :'xml:lang' => "en"}
   %head= render :partial => "shared/head/head_site"
   %body{:class => "application #{body_class(params[:controller], params[:id])} #{action_name}"}
-    #mast_head
-      .container
-        #branding
-          %h1= link_to @site.name, root_url
-        = render :partial => "shared/nav_aux"
-      = render :partial => "shared/nav_foundation"
+    = render :partial => "shared/mast_head"
     #page
       = render :partial => "shared/flash_messages"
       = yield

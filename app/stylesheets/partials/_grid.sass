@@ -23,38 +23,35 @@
   overflow: hidden
   width = !grid_width
 
-=row_row
+=nested
   margin: 0 -10px
   display: inline-block
   width: auto
-  
-.row
-  +row
-  .row
-    +row_row
 
-.grid
-  &.one
-    +grid(1)
-  &.two
-    +grid(2)
-  &.three
-    +grid(3)
-  &.four
-    +grid(4)
-  &.five
-    +grid(5)
-  &.six
-    +grid(6)
-  &.seven
-    +grid(7)
-  &.eight
-    +grid(8)
-  &.nine
-    +grid(9)
-  &.ten
-    +grid(10)
-  &.eleven
-    +grid(11)
-  &.twelve
-    +grid(12)
+.grids
+  +nested
+  .grid
+    &.one
+      +grid(1)
+    &.two
+      +grid(2)
+    &.three
+      +grid(3)
+    &.four
+      +grid(4)
+    &.five
+      +grid(5)
+    &.six
+      +grid(6)
+    &.seven
+      +grid(7)
+    &.eight
+      +grid(8)
+    &.nine
+      +grid(9)
+    &.ten
+      +grid(10)
+    &.eleven
+      +grid(11)
+    &.twelve
+      +grid(12)
