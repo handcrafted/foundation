@@ -1,6 +1,6 @@
 h1. Handcrafted's Foundation
 
-Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens": and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on this foundation of clean, extensible, handcrafted code. We eat our own dig food, we use this as our core starting point to ensure consistency through-out our applications.
+Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens":http://josh.the-owens.com and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on this foundation of clean, extensible, handcrafted code. We eat our own dog food, we use this as our core starting point to ensure consistency through-out our applications.
 
 This is our core rails app starting point, built with certain specific standards and opinions in mind. We were tired of writing or copy and pasting the same code over and over from project to project. Then git came along. Git helped us realize there was a better way. Well no more.
 
@@ -28,6 +28,16 @@ h2. Gotchas
 * We try to use "Markers" in key files, such as routes and application.js. We do this to ensure that continued foundation development doesn't trample continued application development
 * Don't annotate the base Foundation application. You should only be annotating the models in your real application
 
-h2. How to use the bootstrap for your app
+h2. Installation Steps (development)
 
-...
+1.  mkdir My-Foundation-App
+2.  cd My-Foundation-App
+3.  git remote add foundation git://github.com/handcrafted/foundation.git
+4.  git pull foundation master
+5.  git remote add origin git@github.com:me/my-foundation-app.git
+6.  cp config/database.example.yml config/database.yml
+7.  Confirm databse setup in config/database.yml
+8.  rake gems:install
+9.  rake db:create
+10. rake db:migrate
+11. rake db:seed

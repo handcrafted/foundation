@@ -22,6 +22,8 @@
       or
       = link_to "sign up", signup_url
       for a new account.
+  
+  = render :partial => "shared/content_samples" if signed_in?
 
 #page_sidebar
   .wrap

@@ -1,31 +1,57 @@
 // Thanks to "The 1Kb Grid"
 // 12 columns, 60 pixels each, with 20 pixel gutter
-
-!pixels_each ||= 60px
-!gutter_width ||= 20px
 !grid_width ||= 960px
-!columns ||= 12
+!grid_columns ||= 12
+!grid_pixels_each ||= 60px
+!grid_gutter_width ||= 20px
 
-=grid(!columns)
+=grid(!grid_columns)
   +column
   @for !n from 1 through 1
-    width = !columns * !pixels_each
+    width = !grid_columns * !grid_pixels_each
   @for !n from 2 through 12
-    width = !columns * !pixels_each + !columns * !gutter_width - 20px
+    width = !grid_columns * !grid_pixels_each + !grid_columns * !grid_gutter_width - !grid_gutter_width
 
 =column
+  display: inline
+  float: left
   margin: 0 10px
   overflow: hidden
-  float: left
-  display: inline
 
 =row
-  +pie-clearfix
-  width: 960px
   margin: 0 auto
   overflow: hidden
+  width = !grid_width
 
-=row_row
+=nested
   margin: 0 -10px
-  width: auto
   display: inline-block
+  width: auto
+
+.grids
+  +nested
+  .grid
+    &.one
+      +grid(1)
+    &.two
+      +grid(2)
+    &.three
+      +grid(3)
+    &.four
+      +grid(4)
+    &.five
+      +grid(5)
+    &.six
+      +grid(6)
+    &.seven
+      +grid(7)
+    &.eight
+      +grid(8)
+    &.nine
+      +grid(9)
+    &.ten
+      +grid(10)
+    &.eleven
+      +grid(11)
+    &.twelve
+      +grid(12)

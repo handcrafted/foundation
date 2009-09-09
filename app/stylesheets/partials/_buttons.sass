@@ -1,0 +1,86 @@
+// Special thanks to ZURB and their Super Awesome Buttons with CSS3 and RGBA
+=awesome
+  +awesome_shared
+  background: #222 url(/images/foundation/button_overlay.png) repeat-x
+  border-bottom: 1px solid rgba(0,0,0,0.25)
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  padding: 5px 10px
+  position: relative
+  text-decoration: none
+  +border-radius("5px")
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
+
+=awesome_shared
+  font-size: 12px
+  font-weight: bold
+  line-height: 1
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
+
+form
+  .form_actions
+    input[type="submit"], a
+      +awesome
+
+      &:visited
+        +awesome
+      &:hover
+        background-color: #111
+        color: #fff
+      &:active
+        top: 1px
+
+      &.small, &.small:visited
+        font-size: 11px
+      &.medium
+        +awesome_shared
+        &:visited
+          +awesome_shared
+      &.large, &.large:visited
+        font-size: 14px
+        padding: 8px 14px
+      &.green
+        background-color: #669338
+        &:visited
+          background-color: #669338
+        &:hover
+          background-color: #80B946
+      &.blue
+        background-color: #2daebf
+        &:visited
+          background-color: #2daebf
+        &:hover
+          background-color: #007d9a
+      &.red
+        background-color: #cc0000
+        &:visited
+          background-color: #cc0000
+        &:hover
+          background-color: #FF0000
+      &.magenta
+        background-color: #a9014b
+        &:visited
+          background-color: #a9014b
+        &:hover
+          background-color: #630030
+      &.orange
+        background-color: #ff5c00
+        &:visited
+          background-color: #ff5c00
+        &:hover
+          background-color: #d45500
+      &.yellow
+        background-color: #ffb515
+        &:visited
+          background-color: #ffb515
+        &:hover
+          background-color: #fc9200
+    input[type="submit"]
+      border: none
+      margin-right: 5px
+      padding: 3px 8px
+      position: relative
+      top: 1px
