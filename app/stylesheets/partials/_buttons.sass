@@ -1,0 +1,63 @@
+=awesome
+  +awesome_shared
+  background: #222 url(http://zurb.com/images/alert-overlay.png) repeat-x
+  border-bottom: 1px solid rgba(0,0,0,0.25)
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  padding: 5px 10px 6px
+  position: relative
+  text-decoration: none
+  +border-radius("5px")
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
+
+=awesome_shared
+  font-size: 13px
+  font-weight: bold
+  line-height: 1
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
+
+.awesome
+  +awesome
+
+  &:visited
+    +awesome
+  &:hover
+    background-color: #111
+    color: #fff
+  &:active
+    top: 1px
+
+  &.small, &.small:visited
+    font-size: 11px
+  &.medium, &.medium:visited
+    +awesome_shared
+  &.large, &.large:visited
+    font-size: 14px
+    padding: 8px 14px 9px
+  &.green, &.green:visited
+    background-color: #91bd09
+  &.green:hover
+    background-color: #749a02
+  &.blue, &.blue:visited
+    background-color: #2daebf
+  &.blue:hover
+    background-color: #007d9a
+  &.red, &.red:visited
+    background-color: #e33100
+  &.red:hover
+    background-color: #872300
+  &.magenta, &.magenta:visited
+    background-color: #a9014b
+  &.magenta:hover
+    background-color: #630030
+  &.orange, &.orange:visited
+    background-color: #ff5c00
+  &.orange:hover
+    background-color: #d45500
+  &.yellow, &.yellow:visited
+    background-color: #ffb515
+  &.yellow:hover
+    background-color: #fc9200
