@@ -1,6 +1,6 @@
 h1. Handcrafted's Foundation
 
-Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens": and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on this foundation of clean, extensible, handcrafted code. We eat our own dig food, we use this as our core starting point to ensure consistency through-out our applications.
+Handcrafted is a small team of Ruby on Rails developers (mainly "Josh Owens":http://josh.the-owens.com and "Adam Stacoviak":http://adamstacoviak.com/). We focus on creating smart, usable web sites built on this foundation of clean, extensible, handcrafted code. We eat our own dog food, we use this as our core starting point to ensure consistency through-out our applications.
 
 This is our core rails app starting point, built with certain specific standards and opinions in mind. We were tired of writing or copy and pasting the same code over and over from project to project. Then git came along. Git helped us realize there was a better way. Well no more.
 
