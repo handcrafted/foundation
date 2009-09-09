@@ -20,59 +20,67 @@
   line-height: 1
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
 
-.awesome
-  +awesome
+form
+  .form_actions
+    input[type="submit"], a
+      +awesome
 
-  &:visited
-    +awesome
-  &:hover
-    background-color: #111
-    color: #fff
-  &:active
-    top: 1px
+      &:visited
+        +awesome
+      &:hover
+        background-color: #111
+        color: #fff
+      &:active
+        top: 1px
 
-  &.small, &.small:visited
-    font-size: 11px
-  &.medium
-    +awesome_shared
-    &:visited
-      +awesome_shared
-  &.large, &.large:visited
-    font-size: 14px
-    padding: 8px 14px
-  &.green
-    background-color: #91bd09
-    &:visited
-      background-color: #91bd09
-    &:hover
-      background-color: #749a02
-  &.blue
-    background-color: #2daebf
-    &:visited
-      background-color: #2daebf
-    &:hover
-      background-color: #007d9a
-  &.red
-    background-color: #e33100
-    &:visited
-      background-color: #e33100
-    &:hover
-      background-color: #872300
-  &.magenta
-    background-color: #a9014b
-    &:visited
-      background-color: #a9014b
-    &:hover
-      background-color: #630030
-  &.orange
-    background-color: #ff5c00
-    &:visited
-      background-color: #ff5c00
-    &:hover
-      background-color: #d45500
-  &.yellow
-    background-color: #ffb515
-    &:visited
-      background-color: #ffb515
-    &:hover
-      background-color: #fc9200
+      &.small, &.small:visited
+        font-size: 11px
+      &.medium
+        +awesome_shared
+        &:visited
+          +awesome_shared
+      &.large, &.large:visited
+        font-size: 14px
+        padding: 8px 14px
+      &.green
+        background-color: #669338
+        &:visited
+          background-color: #669338
+        &:hover
+          background-color: #80B946
+      &.blue
+        background-color: #2daebf
+        &:visited
+          background-color: #2daebf
+        &:hover
+          background-color: #007d9a
+      &.red
+        background-color: #cc0000
+        &:visited
+          background-color: #cc0000
+        &:hover
+          background-color: #FF0000
+      &.magenta
+        background-color: #a9014b
+        &:visited
+          background-color: #a9014b
+        &:hover
+          background-color: #630030
+      &.orange
+        background-color: #ff5c00
+        &:visited
+          background-color: #ff5c00
+        &:hover
+          background-color: #d45500
+      &.yellow
+        background-color: #ffb515
+        &:visited
+          background-color: #ffb515
+        &:hover
+          background-color: #fc9200
+    input[type="submit"]
+      border: none
+      margin-right: 5px
+      padding: 3px 8px
+      position: relative
+      top: 1px

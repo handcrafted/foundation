@@ -9,6 +9,5 @@
     - field_set_tag do
       = f.text_field :email
       = f.password_field :password
-      .form_actions
-        = submit_tag "Sign In", :class => "awesome"
-        = link_to "Reset Password", '#', :class => "awesome"
+      = f.submit "Sign In" do
+        - link_to "Reset Password", '#', :class => "green"
