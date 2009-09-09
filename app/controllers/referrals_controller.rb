@@ -10,7 +10,9 @@ class ReferralsController < ApplicationController
   end
 
   def create
-    logger.info params[:referral][:email_list].split().inspect
+    params[:referral][:email_list].split().each do |email|
+      logger.info "Email = #{email}"
+    end
     redirect_to root_url
   end
   
