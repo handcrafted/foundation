@@ -18,6 +18,8 @@ module NavigationHelpers
       account_path
     when /the account edit page/
       edit_account_path
+    when /the new referral page/
+      new_referral_path
     
     # Add more mappings here.
     # Here is a more fancy example:
