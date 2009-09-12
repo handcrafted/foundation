@@ -1,5 +1,21 @@
-# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
+# This file is used to allow search engine site crawlers to index this site.
 #
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-Agent: *
-# Disallow: /
+# Documentation on the robots.txt file: http://www.robotstxt.org/wc/norobots.html
+#
+# List of all web robots: http://www.robotstxt.org/db.html
+#
+# Check robots.txt at: http://tool.motoricerca.info/robots-checker.phtml
+#
+# Details about Googlebot available at: http://www.google.com/bot.html
+
+# Googlebot
+User-agent: Googlebot
+Disallow:
+
+# All
+User-agent: *
+Disallow: /ie6update/
+Disallow: /images/
+Disallow: /javascripts/
+Disallow: /stylesheets/
+# site specific
