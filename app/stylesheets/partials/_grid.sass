@@ -1,16 +1,18 @@
-// Thanks to "The 1Kb Grid"
+// The Foundation Grid is based on Tyler Tate's 1kb CSS Grid project (http://www.1kbgrid.com/)
 // 12 columns, 60 pixels each, with 20 pixel gutter
 !grid_width ||= 960px
 !grid_columns ||= 12
-!grid_pixels_each ||= 60px
+!grid_pixels ||= 60px
 !grid_gutter_width ||= 20px
 
 =grid(!grid_columns)
   +column
   @for !n from 1 through 1
-    width = !grid_columns * !grid_pixels_each
-  @for !n from 2 through 12
-    width = !grid_columns * !grid_pixels_each + !grid_columns * !grid_gutter_width - !grid_gutter_width
+    width = !grid_columns * !grid_pixels
+  @for !n from 2 through 2
+    width = (!grid_columns * !grid_pixels) + !grid_gutter_width
+  @for !n from 3 through 12
+    width = (!grid_columns * !grid_pixels) + (!grid_columns * !grid_gutter_width) - !grid_gutter_width
 
 =column
   display: inline
@@ -23,35 +25,39 @@
   overflow: hidden
   width = !grid_width
 
-=nested
+=row_nested
   margin: 0 -10px
   display: inline-block
   width: auto
 
+.row
+  +row
 .grids
-  +nested
-  .grid
-    &.one
-      +grid(1)
-    &.two
-      +grid(2)
-    &.three
-      +grid(3)
-    &.four
-      +grid(4)
-    &.five
-      +grid(5)
-    &.six
-      +grid(6)
-    &.seven
-      +grid(7)
-    &.eight
-      +grid(8)
-    &.nine
-      +grid(9)
-    &.ten
-      +grid(10)
-    &.eleven
-      +grid(11)
-    &.twelve
-      +grid(12)
+  +row_nested
+.grid
+  &.one
+    +grid(1)
+  &.two
+    +grid(2)
+  &.three
+    +grid(3)
+  &.four
+    +grid(4)
+  &.five
+    +grid(5)
+  &.six
+    +grid(6)
+  &.seven
+    +grid(7)
+  &.eight
+    +grid(8)
+  &.nine
+    +grid(9)
+  &.ten
+    +grid(10)
+  &.eleven
+    +grid(11)
+  &.twelve
+    +grid(12)
+  p.indent
+    text-indent: -999999px

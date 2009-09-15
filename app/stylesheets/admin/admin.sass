@@ -38,3 +38,37 @@
 
 #footer
   +footer
+
+.row.grid_proving
+  margin-bottom: 50px
+  &:last-child
+    margin-bottom: 0
+  .grid
+    p
+      background: #333
+      color: #fff
+      line-height: 130px
+      text-align: center
+  .row
+    +row_nested
+
+.grid_wrap
+  +clearfix
+  border-bottom: 1px solid #cacaca
+  margin-bottom: 25px
+  padding-bottom: 25px
+  p, ul
+    font-size: 14px
+    line-height: 1.5
+    margin-bottom: 18px
+  p
+    &:last-child
+      margin-bottom: 0
+  ul
+    padding-left: 15px
+    li
+      list-style: disc
+      margin-bottom: 5px
+      padding-left: 5px
+      &:last-child
+        margin-bottom: 0

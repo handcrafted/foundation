@@ -1,0 +1,59 @@
+- @partial_title = "Grid"
+- @page_description = @site.description
+- @page_keywords = "handcrafted, rails, foundation, bootstrap"
+
+#page_header
+  %h2
+    Grid Proving Grounds
+
+.grid_wrap
+  .row
+    .grid.nine
+      %p
+        The
+        %strong
+          Grid Proving Grounds
+        is a sandbox for testing the grid framework and how it works.
+        Foundation provides some pre-existing code to help you get up to speed quickly.
+        
+      %p
+        The Foundation Grid is based on
+        %a{:href => "http://www.tylertate.com/"} Tyler Tate's
+        %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
+        project.
+    .grid.one
+      %p.indent
+        This text should be indented -99999px.
+    .grid.two
+      %ul
+        %li
+          %a{:href => "http://github.com/handcrafted/foundation"} Foundation
+        %li
+          %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
+        %li
+          %a{:href => "http://www.tylertate.com/"} Tyler Tate
+
+.row.grid_proving
+  - 12.times do
+    .grid.one
+      %p
+        1
+
+.row.grid_proving
+  - 6.times do
+    .grid.two
+      %p
+        2
+
+.row.grid_proving
+  .grid.eight
+    .row
+      - 2.times do
+        .grid.two
+          %p
+            2
+      .grid.four
+        %p
+          4
+  .grid.four
+    %p 4
