@@ -1,26 +1,31 @@
-- @partial_title = "Grid"
+- @partial_title = "Foundation Grid"
 - @page_description = @site.description
-- @page_keywords = "handcrafted, rails, foundation, bootstrap"
+- @page_keywords = "handcrafted, rails, foundation, bootstrap, foundation grid"
 
 #page_header
   %h2
-    Grid Proving Grounds
+    Foundation Grid
 
 .grid_wrap
   .row
     .grid.nine
       %p
-        The
-        %strong
-          Grid Proving Grounds
-        is a sandbox for testing the grid framework and how it works.
-        Foundation provides some pre-existing code to help you get up to speed quickly.
+        Here you can sandbox and test Foundation Grid to see how it works. Foundation provides some pre-existing code in
+        %code
+          app/views/pages/_grid.html.haml
+        for you to reference and help you get up to speed quickly.
         
       %p
-        The Foundation Grid is based on
+        %strong
+          Foundation Grid
+        is based on
         %a{:href => "http://www.tylertate.com/"} Tyler Tate's
         %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
         project.
+      
+      %p
+        The default grid is: 960px wide, 12 columns at 60px each with a 20px gutter
+
     .grid.one
       %p.indent
         This text should be indented -99999px.
