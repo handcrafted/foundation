@@ -1,5 +1,14 @@
-// The Foundation Grid is based on Tyler Tate's 1kb CSS Grid project (http://www.1kbgrid.com/)
-// 12 columns, 60 pixels each, with 20 pixel gutter
+//  ----------------------------------------------------------------------------
+//  Foundation Grid
+//  * Author: Adam Stacoviak
+//  * Version: 1.0
+//
+//  Based on work by Tyler Tate
+//  Foundation Grid is based on Tyler Tate's 1kb CSS Grid project (1kbgrid.com)
+//
+//  Default Grid: 960px wide, 12 columns at 60px each with a 20px gutter
+//  ----------------------------------------------------------------------------
+
 !grid_width ||= 960px
 !grid_columns ||= 12
 !grid_pixels ||= 60px
@@ -7,17 +16,14 @@
 
 =grid(!grid_columns)
   +column
-  @for !n from 1 through 1
-    width = !grid_columns * !grid_pixels
-  @for !n from 2 through 2
-    width = (!grid_columns * !grid_pixels) + !grid_gutter_width
-  @for !n from 3 through 12
-    width = (!grid_columns * !grid_pixels) + (!grid_columns * !grid_gutter_width) - !grid_gutter_width
+  @if !grid_columns == 1
+    width = !grid_pixels
+  @else
+    width = (!grid_columns * !grid_pixels) + (!grid_columns * !grid_gutter_width - !grid_gutter_width)
 
 =column
-  display: inline
-  float: left
-  margin: 0 10px
+  +float-left
+  margin = 0 !grid_gutter_width / 2
   overflow: hidden
 
 =row
@@ -26,7 +32,7 @@
   width = !grid_width
 
 =row_nested
-  margin: 0 -10px
+  margin = 0 -!grid_gutter_width / 2
   display: inline-block
   width: auto
 
@@ -59,5 +65,13 @@
     +grid(11)
   &.twelve
     +grid(12)
+  &.thirteen
+    +grid(13)
+  &.fourteen
+    +grid(14)
+  &.fifteen
+    +grid(15)
+  &.sixteen
+    +grid(16)
   p.indent
-    text-indent: -999999px
+    text-indent: -99999px
