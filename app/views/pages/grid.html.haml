@@ -1,0 +1,72 @@
+- @partial_title = "Foundation Grid"
+- @page_description = @site.description
+- @page_keywords = "handcrafted, rails, foundation, bootstrap, foundation grid"
+
+#page_header
+  %h2
+    Foundation Grid
+
+.grid_wrap
+  .row
+    .grid.nine
+      %p
+        Here you can sandbox and test Foundation Grid to see how it works. Foundation provides some pre-existing code in
+        %code
+          app/views/pages/_grid.html.haml
+        for you to reference and help you get up to speed quickly.
+        
+      %p
+        %strong
+          Foundation Grid
+        is based on
+        %a{:href => "http://www.tylertate.com/"} Tyler Tate's
+        %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
+        project.
+      
+      %p
+        The default grid is: 960px wide, 12 columns at 60px each with a 20px gutter
+
+    .grid.one
+      %p.indent
+        This text should be indented -99999px.
+    .grid.two
+      %ul
+        %li
+          %a{:href => "http://github.com/handcrafted/foundation"} Foundation
+        %li
+          %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
+        %li
+          %a{:href => "http://www.tylertate.com/"} Tyler Tate
+
+.row.grid_proving
+  - 12.times do
+    .grid.one
+      %p
+        1
+
+.row.grid_proving
+  - 6.times do
+    .grid.two
+      %p
+        2
+
+.row.grid_proving
+  .grid.eight
+    .row
+      - 2.times do
+        .grid.two
+          %p
+            2
+      .grid.four
+        %p
+          4
+  .grid.four
+    %p 4
+
+.row.grid_proving
+  .grid.four
+    %p 4
+  .grid.four
+    %p 4
+  .grid.four
+    %p 4
