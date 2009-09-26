@@ -1,77 +1,8 @@
-//  ----------------------------------------------------------------------------
-//  Foundation Grid
-//  * Author: Adam Stacoviak
-//  * Version: 1.0
-//
-//  Based on work by Tyler Tate
-//  Foundation Grid is based on Tyler Tate's 1kb CSS Grid project (1kbgrid.com)
-//
-//  Default Grid: 960px wide, 12 columns at 60px each with a 20px gutter
-//  ----------------------------------------------------------------------------
+//  The following locks in our grid coordinates
 
 !grid_width ||= 960px
 !grid_columns ||= 12
 !grid_pixels ||= 60px
 !grid_gutter_width ||= 20px
 
-=grid(!grid_columns)
-  +column
-  @if !grid_columns == 1
-    width = !grid_pixels
-  @else
-    width = (!grid_columns * !grid_pixels) + (!grid_columns * !grid_gutter_width - !grid_gutter_width)
-
-=column
-  +float-left
-  margin = 0 !grid_gutter_width / 2
-  overflow: hidden
-
-=row
-  margin: 0 auto
-  overflow: hidden
-  width = !grid_width
-
-=row_nested
-  margin = 0 -!grid_gutter_width / 2
-  display: inline-block
-  width: auto
-
-.row
-  +row
-.grids
-  +row_nested
-.grid
-  &.one
-    +grid(1)
-  &.two
-    +grid(2)
-  &.three
-    +grid(3)
-  &.four
-    +grid(4)
-  &.five
-    +grid(5)
-  &.six
-    +grid(6)
-  &.seven
-    +grid(7)
-  &.eight
-    +grid(8)
-  &.nine
-    +grid(9)
-  &.ten
-    +grid(10)
-  &.eleven
-    +grid(11)
-  &.twelve
-    +grid(12)
-  &.thirteen
-    +grid(13)
-  &.fourteen
-    +grid(14)
-  &.fifteen
-    +grid(15)
-  &.sixteen
-    +grid(16)
-  p.indent
-    text-indent: -99999px
+@import grid-coordinates/grid

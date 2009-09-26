@@ -4,55 +4,45 @@
 
 #page_header
   %h2
-    Foundation Grid
+    Handcrafted's Grid Coordinates Compass Plugin
 
-.grid_wrap
-  .row
-    .grid.nine
-      %p
-        Here you can sandbox and test Foundation Grid to see how it works. Foundation provides some pre-existing code in
-        %code
-          app/views/pages/_grid.html.haml
-        for you to reference and help you get up to speed quickly.
-        
-      %p
-        %strong
-          Foundation Grid
-        is based on
-        %a{:href => "http://www.tylertate.com/"} Tyler Tate's
-        %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
-        project.
+.grid_container.content
+  .grid.ten
+    :markdown
+      ##Grid Coordinates is Simple
+
+      [Grid Coordinates](http://github.com/handcrafted/compass-grid-coordinates-plugin) is just a grid. It also supports nested grids and is also able to generate the CSS for a multitude of grid coordinates.
       
-      %p
-        The default grid is: 960px wide, 12 columns at 60px each with a 20px gutter
+      ##Default Grid Setup / 960126020
+      
+      The default grid setup is 960px wide, 12 columns at 60px each with a 20px gutter. Feel free to mix it up with something like -- 960 / 16 / 40 / 20, or 800 / 10 / 60 / 20.
+      
+      All you need to do is update the 4 variables to change the coordinates of your grid. Use [1kbgrid.com](http://1kbgrid.com/) as a guide to the various grid coordinates possible.
+      
+      Grid Coordinates is a [Compass](http://compass-style.org/) plugin based on and heavily inspired by [Tyler Tate's](http://www.tylertate.com/) [1kb CSS Grid project](http://1kbgrid.com/). Beautifully simple and even more so when written in [Sass](http://sass-lang.com/).
 
-    .grid.one
-      %p.indent
-        This text should be indented -99999px.
-    .grid.two
-      %ul
-        %li
-          %a{:href => "http://github.com/handcrafted/foundation"} Foundation
-        %li
-          %a{:href => "http://www.1kbgrid.com/"} 1kb CSS Grid
-        %li
-          %a{:href => "http://www.tylertate.com/"} Tyler Tate
+  .grid.two
+    :markdown
+      * [Grid Coordinates (Compass Plugin)](http://github.com/handcrafted/compass-grid-coordinates-plugin)
+      * [Foundation](http://github.com/handcrafted/foundation)
+      * [1kb CSS Grid](http://www.1kbgrid.com/)
+      * [Tyler Tate](http://www.tylertate.com/)
 
-.row.grid_proving
+.grid_container.sample
   - 12.times do
     .grid.one
       %p
         1
 
-.row.grid_proving
+.grid_container.sample
   - 6.times do
     .grid.two
       %p
         2
 
-.row.grid_proving
+.grid_container.sample
   .grid.eight
-    .row
+    .grid_container.nested
       - 2.times do
         .grid.two
           %p
@@ -63,7 +53,7 @@
   .grid.four
     %p 4
 
-.row.grid_proving
+.grid_container.sample
   .grid.four
     %p 4
   .grid.four
