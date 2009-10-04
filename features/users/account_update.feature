@@ -1,7 +1,7 @@
 Feature: Account Update
 
   In order to display my most accurate user information
-  As as user
+  As a user
   I should be able to edit my account
   
   Background:
