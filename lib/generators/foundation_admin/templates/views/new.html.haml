@@ -1,0 +1,13 @@
+#page_header
+  %h1
+    New <%= singular_name %>
+
+#page_body
+  / New <%= singular_name %> form
+  - form_for @<%= singular_name %>, :url => admin_<%= plural_name %>_url, :builder => HandcraftedFormBuilder do |f|
+    <%- column_names.each do |name| -%>
+    <%- next if %w(id created_at updated_at).include?(name) -%>
+    = f.text_field :<%= name -%>
+    <%- end %>
+    = f.submit "Create" do
+      - link_to "Cancel", admin_dashboard_url, :class => "red"
