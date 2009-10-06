@@ -1,11 +1,11 @@
-#nav_foundation
+#nav_main.foundation
   background: #282828
   background: rgba(0, 0, 0, 0.2)
   border-bottom: 4px solid #ddd
   margin-top: 25px
   ul
     padding-top: 10px
-    +row
+    +grid-container
     +clearfix
     li
       display: inline
@@ -32,49 +32,45 @@
           color: #0d0d0d
           text-decoration: none
 
-//** Show current page
-=nav_foundation_current
+//  Show current page
+=nav_main_current
   a
     background: #ddd
     color: #0d0d0d
     font-weight: bold
 
-body.application.show #nav_foundation li.home,
-body.application.users.show #nav_foundation li.account,
-body.application.users.edit #nav_foundation li.account,
-body.application.user_sessions #nav_foundation li.signin,
-body.application.users.new #nav_foundation li.signup,
-body.application.admin_dashboard #nav_foundation li.dashboard,
-body.application.admin_users #nav_foundation li.users,
-body.application.admin_emails #nav_foundation li.emails,
-body.application.admin_invites #nav_foundation li.invites,
-body.application.admin_profiles #nav_foundation li.profiles,
-body.application.admin_jobs #nav_foundation li.jobs,
-body.invites #nav_foundation li.invites,
-body.referrals #nav_foundation li.referrals
-  +nav_foundation_current
+body.application.show #nav_main.foundation li.home,
+body.application.users.show #nav_main.foundation li.account,
+body.application.users.edit #nav_main.foundation li.account,
+body.application.user_sessions #nav_main.foundation li.signin,
+body.application.users.new #nav_main.foundation li.signup,
+body.application.admin_dashboard #nav_main.foundation li.dashboard,
+body.application.admin_users #nav_main.foundation li.users,
+body.application.admin_emails #nav_main.foundation li.emails,
+body.application.admin_invites #nav_main.foundation li.invites,
+body.application.admin_profiles #nav_main.foundation li.profiles,
+body.application.admin_jobs #nav_main.foundation li.jobs,
+body.invites #nav_main.foundation li.invites,
+body.referrals #nav_main.foundation li.referrals
+  +nav_main_current
 
-// Alternative navigation styles
+//  Aux navigation styles
 #nav_aux
-  +pie-clearfix
   font-size: 11px
   ul
     +float-right
-    margin-top: 4px
+    padding-top: 4px
   li
     +float-left
-  ul
-    li
-      border-left: 1px solid #282828
-      border-left: 1px solid rgba(0, 0, 0, 0.4)
-      color: #fff
-      margin-left: 5px
-      padding-left: 5px
-      &:first-child
-        border: none
-        margin-left: 0
-        padding-left: 0
-
+    border-left: 1px solid #282828
+    border-left: 1px solid rgba(0, 0, 0, 0.4)
+    color: #fff
+    margin-left: 5px
+    padding-left: 5px
+    &:first-child
+      border: none
+      margin-left: 0
+      padding-left: 0
     a
       color: #fff
       display: inline-block

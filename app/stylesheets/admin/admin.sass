@@ -1,13 +1,13 @@
-//**Import Compass Mixins
+//  Import Compass Mixins
 
 @import partials/base.sass
 
-//** Core Grid Settings
+//  Core Grid Settings
 #branding, #page, #footer
-  +row
+  +grid-container
 
 #mast_head > .container
-  +row
+  +grid-container
   #branding
     +grid(4)
   #nav_aux
@@ -21,7 +21,7 @@
 #page_sidebar
   +grid(4)
 
-//** Foundation Styles
+//  Foundation Styles
 #mast_head
   +mast_head
 
@@ -39,36 +39,36 @@
 #footer
   +footer
 
-.row.grid_proving
-  margin-bottom: 50px
-  &:last-child
-    margin-bottom: 0
-  .grid
-    p
-      background: #333
-      color: #fff
-      line-height: 130px
-      text-align: center
-  .row
-    +row_nested
-
-.grid_wrap
-  +clearfix
-  border-bottom: 1px solid #cacaca
-  margin-bottom: 25px
-  padding-bottom: 25px
-  p, ul
+.grid_container, .grid_container.nested
+  &.content
+    border-bottom: 1px solid #cacaca
     font-size: 14px
     line-height: 1.5
-    margin-bottom: 18px
-  p
-    &:last-child
-      margin-bottom: 0
-  ul
-    padding-left: 15px
-    li
-      list-style: disc
-      margin-bottom: 5px
-      padding-left: 5px
+    margin-bottom: 25px
+    padding-bottom: 25px
+    p, ul
+      margin-bottom: 20px
       &:last-child
         margin-bottom: 0
+    ul
+      padding-left: 15px
+      li
+        list-style: disc
+        margin-bottom: 5px
+        padding-left: 5px
+        &:last-child
+          margin-bottom: 0
+    code
+      background-color: #FEFEB1
+      color: #000
+      padding: 3px
+  &.sample
+    margin-bottom: 50px
+    &:last-child
+      margin-bottom: 0
+    .grid
+      p
+        background: #333
+        color: #fff
+        line-height: 130px
+        text-align: center
