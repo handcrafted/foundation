@@ -6,12 +6,13 @@ module SortableTableHelper
   end
   
   def fetch_model(object)
+    return nil if object.blank?
     object.class
   end
   
   def fetch_headers(model)
     columns = model.column_names.collect {|column| column.to_sym}
-    {:headers => columns, :data => columns}
+    columns
   end
   
   def fetch_section_name(controller = params[:controller])
@@ -22,8 +23,8 @@ module SortableTableHelper
   def default_options(options, objects)
     options[:name] ||= fetch_section_name
     options[:model] ||= fetch_model(objects.first)
-    options[:data] ||= fetch_headers(options[:model])
-    options[:headers] ||= options[:data].collect {|header| header.to_s.humanize}
+    options[:data] ||= fetch_headers(options[:model]) unless options[:model].nil?
+    options[:headers] ||= options[:data].collect {|header| header.to_s.humanize}.flatten unless options[:model].nil?
     options[:link_action] ||= :show
     options[:controller] ||= params[:controller]
     options

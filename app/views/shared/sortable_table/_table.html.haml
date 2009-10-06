@@ -26,4 +26,8 @@
                 = link_to object.send(object_data.to_sym), {:controller => options[:controller], :action => options[:link_action].to_s, :id => object.id}
             - else
               %td
-                =h object.send(object_data.to_sym)
+                - data = object.send(object_data.to_sym)
+                - if data.class == ActiveSupport::TimeWithZone
+                  =h data.to_s(:long)
+                - else
+                  =h data
