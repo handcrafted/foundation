@@ -13,9 +13,10 @@ h2. Key Concepts
 
 h2. Opinionated Choices
 
+* "Haml":http://haml-lang.com/, "Sass":http://sass-lang.com/, "Compass":http://wiki.github.com/chriseppstein/compass
 * "JQuery":http://jquery.com/
 * "JQuery Tools":http://flowplayer.org/tools/
-* "Haml":http://haml-lang.com/, "Sass":http://sass-lang.com/, "Compass":http://wiki.github.com/chriseppstein/compass
+* "qTip":http://craigsworks.com/projects/qtip/
 * Delayed Job
 * AuthLogic
 * NewRelic
@@ -30,15 +31,17 @@ h2. Installation Steps (development)
 
 1.  mkdir My-Foundation-App
 2.  cd My-Foundation-App
-3.  git remote add foundation git://github.com/handcrafted/foundation.git
-4.  git pull foundation master
-5.  git remote add origin git@github.com:me/my-foundation-app.git
-6.  cp config/database.example.yml config/database.yml
-7.  Confirm databse setup in config/database.yml
-8.  rake gems:install
-9.  rake db:create
-10. rake db:migrate
-11. rake db:seed
+3.  git init
+4.  git remote add foundation git://github.com/handcrafted/foundation.git
+5.  git pull foundation master
+6.  git remote add origin git@github.com:me/my-foundation-app.git
+7.  cp config/database.example.yml config/database.yml
+8.  Confirm databse setup in config/database.yml
+9.  sudo gem sources -a http://gemcutter.org/
+10. rake gems:install
+11. rake db:create
+12. rake db:migrate
+13. rake db:seed
 
 h2. License
 
