@@ -20,15 +20,15 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem "tinder", :lib => false
   config.gem 'authlogic'
-  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gemcutter.org'
-  config.gem 'thoughtbot-paperclip', :lib     => 'paperclip', :source  => 'http://gemcutter.org', :version => '>= 2.2.9'
-  config.gem 'javan-whenever', :lib => false, :version => '>= 0.1.7', :source => 'http://gemcutter.org'
+  config.gem 'will_paginate', :lib => 'will_paginate', :source => 'http://gemcutter.org'
+  config.gem 'paperclip', :lib     => 'paperclip', :source  => 'http://gemcutter.org', :version => '>= 2.2.9'
+  config.gem 'whenever', :lib => false, :source => 'http://gemcutter.org', :version => '>= 0.3.7'
   config.gem 'friendly_id'
   config.gem 'newrelic_rpm'
   config.gem 'liquid'
   config.gem 'haml', :version => '>= 2.2.0'
-  config.gem 'compass', :version => '>= 0.8.5', :source => 'http://gemcutter.org'
-  config.gem 'grid-coordinates', :lib => 'compass', :version => '>= 1.0.3', :source => 'gemcutter.org'
+  config.gem 'compass', :source => 'http://gemcutter.org', :version => '>= 0.8.5'
+  config.gem 'grid-coordinates', :lib => 'compass', :source => 'gemcutter.org', :version => '>= 1.0.3'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
