@@ -36,12 +36,14 @@ h2. Installation Steps (development)
 5.  git pull foundation master
 6.  git remote add origin git@github.com:me/my-foundation-app.git
 7.  cp config/database.example.yml config/database.yml
-8.  Confirm databse setup in config/database.yml
+8.  Confirm database setup in config/database.yml
 9.  sudo gem sources -a http://gemcutter.org/
-10. rake gems:install
-11. rake db:create
-12. rake db:migrate
-13. rake db:seed
+10. sudo gem install chronic
+11. rake gems:install
+12. rake db:create
+13. rake db:migrate
+14. rake db:seed
+15. compass
 
 h2. License
 
