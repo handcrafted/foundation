@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "You have been signed in."
       redirect_back_or_default account_url
     else
-      flash[:warning] = "There is an issue with your credentials."
+      flash[:warning] = @user_session.errors.full_messages
       render :action => :new
     end
   end
