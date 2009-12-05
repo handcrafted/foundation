@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
   has_friendly_id :login, :use_slug => true
   
-  liquid_methods :display_name
+  liquid_methods :display_name, :perishable_token
   
   attr_protected :admin
   
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   
   def deliver_password_reset_instructions!  
     reset_perishable_token!  
-    Notifier.deliver_password_reset_instructions(self)  
+    Notifier.send_later(:deliver_password_reset_instructions, self)  
   end
 
 end

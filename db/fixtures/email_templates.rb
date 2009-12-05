@@ -10,6 +10,19 @@ END
 end
 
 EmailTemplate.seed(:name) do |e|
+  e.name = "password_reset"
+  e.subject = "You have requested a password reset for {{site.name}}"
+  e.body = 
+<<-END
+{{user.display_name}}, you password can be reset for {{site.name}}.
+If you did not make this request, simply ignore this email.  
+If you did make this request just click the link below:
+
+  {{site.url}}/password_resets/{{user.perishable_token}}/edit
+END
+end
+
+EmailTemplate.seed(:name) do |e|
   e.name = 'invitation'
   e.subject = "You have been invited to {{site.name}}"
   e.body =

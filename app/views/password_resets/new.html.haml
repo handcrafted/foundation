@@ -1,0 +1,12 @@
+= render :partial => "shared/notice_invite_required"
+
+#page_header
+  %h2
+    Request a password reset
+
+#page_body
+  = error_messages_for :user
+  - form_tag password_resets_url, :builder => HandcraftedFormBuilder do |f|
+    %fieldset
+      = text_field_tag :email
+      = submit_tag "Reset Password"
